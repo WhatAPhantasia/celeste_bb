@@ -1,0 +1,19 @@
+descript
+{
+	version,1
+}
+//animation#.pattern#,method,surface,pause,X,Y
+
+//—————————————————————————————— Sakura surfaces ——————————————————————————————
+
+surface0
+{
+	element0,overlay,surface0.png,0,0
+}
+
+//—————————————————————————————— Kero surfaces ——————————————————————————————
+
+surface10
+{
+	element0,overlay,surface10.png,0,0
+}

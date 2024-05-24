@@ -1,0 +1,17 @@
+charset,UTF-8
+
+name,Celeste
+type,ghost
+
+shiori,yaya.dll
+
+craftman,WhatAPhantasia
+craftmanw,WhatAPhantasia
+craftmanurl,https://whataphantasia.github.io/projects/ukagaka/
+
+sakura.name,Celeste
+kero.name,Recordings
+
+icon,microphone.ico
+
+sstp.allowunspecifiedsend,0

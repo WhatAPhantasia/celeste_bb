@@ -1,0 +1,278 @@
+OnAiTalk
+{
+	LastTalk = CurrentStory
+	LastTalk
+}
+
+CurrentStory
+{
+	switch storyprogress[0]
+	{
+		OnStory.One
+		OnStory.Two
+		OnStory.Three
+		OnStory.Four
+		OnStory.Five
+		OnStory.Six
+		OnStory.Seven
+		OnStory.Eight
+	}
+}
+
+//-------- STORY SEQUENCES
+
+OnStory.One : all
+{
+	//I’m Celeste!
+	//(one of her performances (firstboot)) short
+
+	switch storyprogress[1]
+	{
+		{
+			"\0Good morning, sun-- \w8Good morning, you! \w8It's Cel, your favorite idol and messenger of Fenr!\w8\w8\x"
+			"Hehehe! \w8Aw, you're all so kind!\w8\w8\x"
+			"Now... \w8Please lend me your ears, everyone!"
+			"%(next)"
+		}
+		{
+			"🎵 I love, love, love, to fill the creases in your heart,\w8\w8\x"
+			"🎵 In the end, in the end, we'll paint together a \_a[key]peace\_a of art! 🎵"
+			"%(next)"
+		}
+		{
+			//the recording is over (randomized?)
+		}
+	}
+}
+
+OnStory.Two : all
+{
+	//That’s what peace means!
+	//(This recording is about Celeste’s combat capabilities, and the Fenara government’s thoughts about the tensions between Fenara and Valaria. Cel is protecting the capitol against monsters, showing off her weapon :3 at the start :3)
+	
+	switch storyprogress[1]
+	{
+		{
+			"\1Miss Celeste, what does peace mean to you?\w8\w8"
+			"\0Peace... \w8It's more simple than everyone makes it out to be, mister.\w8\w8\x"
+			"\0We all want to be happy, and safe. I want to make music that inspires everyone to help each other to be the happiest we can be. \w8That's not naive at all. \w8I _know_ it's possible.\w8\w8"
+			"\1Oh! \w8How noble, Miss Celeste!\w8\w8\x"
+			"\0Hardly! \w8You want to protect the people you love, don't you?\w8\w8"
+			"\1Hahaha, yes, of course.\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\0That's why I'm doing my part to protect Fenara from the mass influx of monsters lately. \w8I know it's a scary time, everyone, but we can do it if we all work together!\w8\w8"
+			"\1Oh, yes. \w8Volunteering for your local Force is the best way to serve your community.\w8\w8\x"
+			"\0Mhmm! \w8And you know your number one idol will be right behind you, supporting you all the way!\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\1"
+		}
+	}
+}
+
+OnStory.Three : all
+{
+	//Can’t you tell me what to do? 
+	//(Agastache and Cel, her praying to Fenr)
+	
+	switch storyprogress[1]
+	{
+		{
+			//turned around
+			"\0Fenr, \w8our Sun, \w8our light. \w8\w8Guide us with your sacred radiance. \w8\w8May we pursue strength, \w8may we pursure courage... \w8\w8In whatever form it may be.\w8\w8\x"
+			"...Whatever \w1form \w1it \w1may \w1be. \w8\w8Isn't that \w8so \w8open ended, \w8\w4Fenr?\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\1Celeste. \w8You're here early.\w8\w8"
+			"\0O-Oh! \w8Agastache!\w8\w8\x" //shock -> smile
+			"\1It's good to see you, starlight. \w8You've been gone since that incident last week. \w8\w2They aren't working you too hard, are they?\w8\w8"
+			"\0Oh, hardly! \w8It's been a really productive week, Resonant, \w4I couldn't be happier!\w8\w8\x"
+			"\1Is that so...?\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\1I know what you're thinking when you have that look on your face. \w8What are you so unsure about?\w8\w8"
+			"\0Oh, \w8um...\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\0It's just... \w8That"
+			"%(next)"
+		}
+	}
+}
+
+OnStory.Four : all
+{
+	//What’s in a dream? 
+	//(Tahir and Cel talking in the garden)
+
+	switch storyprogress[1]
+	{
+		{
+			"\0Oh... \w8Poor thing. \w8\w8It's drooping.\w8\w8\x"
+			"I think... \w8It needs water, \w8right?\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\0Um... \w8Okay, \w4it needs water, \w4but where do I...\w8"
+			"\1Water, yes. \w8Sunflowers are greedy about that. \w8Otherwise, thought, it's perfectly healthy.\w8\w8"
+			"\0\n\n[half]Huh?\w8\w8\x"
+			"\1This plot has mature sunflowers. \w8The weight of the seeds naturally make the flower droop.\w8\w8"
+			"\0Then, um... \w8It's \w4okay?\w8\w8\x"
+			"%(next)"
+		}
+		{
+			"\1It could certainly be _better._ \w8This is the display patch, and this variety should have a strong enough stem to handle the flower bed. \w8The dry soil doesn't look good, either.\w8\w8\x"
+			"And you'd expect better out of this Light. \w4It's the biggest in the capitol? \w8Known for the _beautiful gardens?_ \w8What group of Resonants looked over this patch? \w8I'd like to have a word with them, they're being so careless.\w8\w8\x"
+			"\0Haha! Hey, if they heard you saying that, they'd be heartbroken!\w8\w8"
+			"\1It's the truth, Cel."
+			"%(next)"
+		}
+	}
+}
+
+OnStory.Five : all
+{
+	//And then you took it from me. 
+	//(Umair lecturing Tahir and Cel. And then talking about Valarian rebels. Go kill them Cel!)
+	
+	switch storyprogress[1]
+	{
+		{
+			"\1"
+			"%(next)"
+		}
+		{
+			"\0"
+			"%(next)"
+		}
+		{
+			"\1"
+		}
+	}
+}
+
+OnStory.Six : all
+{
+	//Peace is restored!  
+	//(Aftermath of topsoil (oh god theres so much i could do here...))
+	
+	switch storyprogress[1]
+	{
+		{
+			"\1"
+			"%(next)"
+		}
+		{
+			"\0"
+			"%(next)"
+		}
+		{
+			"\1"
+		}
+	}
+}
+
+OnStory.Seven : all
+{
+	//Tell me what to do! 
+	//(Celeste totally breaking down at the suns light and rambling at fenr 😭)
+	
+	switch storyprogress[1]
+	{
+		{
+			"\1"
+			"%(next)"
+		}
+		{
+			"\0"
+			"%(next)"
+		}
+		{
+			"\1"
+		}
+	}
+}
+
+OnStory.Eight : all
+{
+	//But in the end, it’s still you. 
+	//(Tahir leaving AUGHEG and then everything returning to the status quo KMS)
+	
+	switch storyprogress[1]
+	{
+		{
+			"\1"
+			"%(next)"
+		}
+		{
+			"\0"
+			"%(next)"
+		}
+		{
+			"\1"
+		}
+	}
+}
+
+
+//-------- RANDOM TALK
+//LOOOOOOOOOLLLLLL NEVERMIND i need to focus on the actual story because im writing WAY slower than i thought i would <_<
+
+/*
+RandomTalk : nonoverlap_pool
+{
+	//dialogue available at all times
+	"\0\s[0]Fill this with lots of random dialogue."
+	
+	//STORY PROGRESS (dialogues unique to that story beat? idk i dont think anyone will see these....)
+	case storyprogress
+	{
+		when 0
+		{
+
+		}
+		when 1
+		{
+
+		}
+		when 2
+		{
+
+		}
+		when 3
+		{
+
+		}
+		when 4
+		{
+
+		}
+		when 5
+		{
+
+		}
+		when 6
+		{
+
+		}
+		when 7
+		{
+
+		}
+		when 8
+		{
+
+		}
+		when 9
+		{
+
+		}
+	}
+}
+*/

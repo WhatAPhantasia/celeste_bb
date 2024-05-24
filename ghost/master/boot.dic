@@ -1,0 +1,44 @@
+OnFirstBoot
+{
+	stroke = 0
+	LastTalk = ""
+	currentstory = (0,0) 	//[0] +1 for each chapter
+							//[1] +1 or -1 for each dialogue in the chapter
+	seenstory = 0 			//the above is to keep track of where the user is in the story
+							//this variable keeps track of how many chapters you've completed overall.
+	MiscFlags = IARRAY
+	
+	OnStory.One
+}
+
+OnInitialize
+{
+	//If you want some variables to reset on boot, put them here. This event will happen even if you add other events like OnGhostChanged
+	//OnInitialize is a NOTIFY event! That means it cannot return scripts. This event is only meant for things like variable changes. See this page on Ukadoc for more info: https://ukagakadreamteam.github.io/ukadoc/manual/spec_shiori3.html
+	
+	//If you add new variables in updates, I recommend initializing them like so:
+	//if !ISVAR("NewVariable"); NewVariable = 0
+	//This means that it will only set the new variable if the user doesn't already have it, so that their variables don't get overwritten
+	
+	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically
+	{
+		LastTalk = ""
+	}
+	//failsafes
+	if !ISVAR("storyprogress"); storyprogress = (0,0)
+}
+
+OnBoot
+{
+	"%(s.base)"
+	--
+	"--Bzzzt. \w8Here you are again."
+	"--Bzzzt. \w8The recordings are still here."
+}
+
+OnClose
+{
+	"\1That's enough. \w8You turn off the screen, and turn away."
+	--
+	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
+}

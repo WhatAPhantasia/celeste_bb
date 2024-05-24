@@ -1,0 +1,21 @@
+//As the name implies, this checks if the balloon is currently open or not.
+//Will be 0 if the balloon is not open, and 1 if the balloon is open
+BalloonIsOpen
+{
+	"balloon" _in_ var.req.value[ASEARCH("Status",var.req.key)]
+}
+
+//This function allows you to add a line break, but only for the balloon you intend your ghost to use! So if a bit of text wraps awkwardly, but you don't want to add a \n because it may look super weird in other balloons, you can put a %(br) instead! It'll be a \n in your balloon, and a single space in any other balloon. Make sure you add the name of your balloon here!
+//Example: "This dialogue would cut awkwardly in a hypothetical default%(br)balloon,\w4 so a manual linebreak is added for only that balloon.\w8\w8 In any other balloon this would be a%(br)continuous line,\w4 and use SSP's default word wrap.\e"
+br
+{
+	if SHIORI3FW.BalloonName == "Screenfeed"; "\n"
+	else; " "
+}
+
+//This function is to help with changing text alignment in the same line! It makes a new line by using \n, displaying a space, and then going back up a line. So you'd use it like this:
+//"Text on the left%(newline)\f[align,right]Text on the right"
+newline
+{
+	"\n \_l[0]\n[-100]"
+}

@@ -1,0 +1,25 @@
+//------ WORDS
+
+
+
+
+//------- SHELL
+
+s.base
+{
+	//will depend on which part of the story you're at i think
+	//resets every surface for now
+	"\0\s[0]\1\s[-1]\p[2]\s[-1]"
+}
+
+//------- MISC FUNCTIONS
+
+next
+{
+	//handles proceeding storyprogress[1]
+}
+end
+{
+	//handles random text at the end of a recording
+	//this should go in words but it fits better here imo
+}
