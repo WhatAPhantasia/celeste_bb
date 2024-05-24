@@ -41,6 +41,7 @@ OnStory.One : all
 		}
 		{
 			//the recording is over (randomized?)
+			end
 		}
 	}
 }
@@ -58,13 +59,13 @@ OnStory.Two : all
 			"\0We all want to be happy, and safe. I want to make music that inspires everyone to help each other to be the happiest we can be. \w8That's not naive at all. \w8I _know_ it's possible.\w8\w8"
 			"\1Oh! \w8How noble, Miss Celeste!\w8\w8\x"
 			"\0Hardly! \w8You want to protect the people you love, don't you?\w8\w8"
-			"\1Hahaha, yes, of course.\w8\w8\x"
+			"\1Hahaha, yes, of course."
 			"%(next)"
 		}
 		{
 			"\0That's why I'm doing my part to protect Fenara from the mass influx of monsters lately. \w8I know it's a scary time, everyone, but we can do it if we all work together!\w8\w8"
 			"\1Oh, yes. \w8Volunteering for your local Force is the best way to serve your community.\w8\w8\x"
-			"\0Mhmm! \w8And you know your number one idol will be right behind you, supporting you all the way!\w8\w8\x"
+			"\0Mhmm! \w8And you know your number one idol will be right behind you, supporting you all the way!"
 			"%(next)"
 		}
 		{
@@ -83,7 +84,7 @@ OnStory.Three : all
 		{
 			//turned around
 			"\0Fenr, \w8our Sun, \w8our light. \w8\w8Guide us with your sacred radiance. \w8\w8May we pursue strength, \w8may we pursure courage... \w8\w8In whatever form it may be.\w8\w8\x"
-			"...Whatever \w1form \w1it \w1may \w1be. \w8\w8Isn't that \w8so \w8open ended, \w8\w4Fenr?\w8\w8\x"
+			"...Whatever \w1form \w1it \w1may \w1be. \w8\w8Isn't that \w8so \w8open ended, \w8\w4Fenr?"
 			"%(next)"
 		}
 		{
@@ -123,7 +124,7 @@ OnStory.Four : all
 			"\1Water, yes. \w8Sunflowers are greedy about that. \w8Otherwise, thought, it's perfectly healthy.\w8\w8"
 			"\0\n\n[half]Huh?\w8\w8\x"
 			"\1This plot has mature sunflowers. \w8The weight of the seeds naturally make the flower droop.\w8\w8"
-			"\0Then, um... \w8It's \w4okay?\w8\w8\x"
+			"\0Then, um... \w8It's \w4okay?"
 			"%(next)"
 		}
 		{

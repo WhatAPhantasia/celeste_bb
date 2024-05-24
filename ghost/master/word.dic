@@ -17,9 +17,28 @@ s.base
 next
 {
 	//handles proceeding storyprogress[1]
+	if SHIORI3FW.Eventid == "OnLastTalk"
+	{"\w8\w8\x\e"}
+	else
+	{"\![raise,OnDialogueVars,next]\w8\w8\x\e"}
+}
+//okay this is only relevant here so im adding it
+//ah man i forgot delayed eval is a security issue. okay we'll do it this way
+OnDialogueVars
+{
+	if reference0 == "next"; storyprogress[1]++
+}
+back
+{
+	if storyprogress[1] <= 1; storyprogress[1] = 0
+	elseif storyprogress[1] == 1; storyprogress[1]--
+	else; storyprogress[1] -= 2
 }
 end
 {
 	//handles random text at the end of a recording
 	//this should go in words but it fits better here imo
+	""
+	--
+	""
 }
