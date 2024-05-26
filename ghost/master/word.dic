@@ -5,40 +5,53 @@
 
 //------- SHELL
 
+s.init
+{
+	//to align the invisible screens to set up balloons
+	"\![reset,sticky-window]\![set,sticky-window,0,1,2]" //for some reason i cant set this up in descript.txt?
+	--
+	"\p[2]\s[-1]\![move,--X=0,--Y=0,--base=0,--base-offset=center.center,--option=ignore-sticky-window]"
+	--
+	"\![set,balloonoffset,@-66,@-550]"
+	--
+	"\1\s[-1]\![move,--X=0,--Y=0,--base=0,--base-offset=center.center,--option=ignore-sticky-window]"
+	--
+	"\![set,balloonoffset,@-66,@-370]"
+	--
+	"\0\s[0]"
+
+	//i can make this cleaner post jam ig
+}
+
 s.base
 {
-	//will depend on which part of the story you're at i think
-	//resets every surface for now
-	"\0\s[0]\1\s[-1]\p[2]\s[-1]"
+	//sets the main monitor (does not set the surface of \1 or \p[2])
+	//depends on which part of the story you're at... kinda complicated...
+
+	//for now it just sets it back to \s[0]
+	"\0\s[0]"
 }
 
 //------- MISC FUNCTIONS
 
+//deprecated functions back when progressing the story was manual instead of onaitalk
 next
 {
-	//handles proceeding storyprogress[1]
-	if SHIORI3FW.Eventid == "OnLastTalk"
-	{"\w8\w8\x\e"}
-	else
-	{"\![raise,OnDialogueVars,next]\w8\w8\x\e"}
+	//"\![raise,OnDialogueVars,next]\w8\w8\x\e"
+	"\w8\w8\0\x\e"
 }
 //okay this is only relevant here so im adding it
 //ah man i forgot delayed eval is a security issue. okay we'll do it this way
 OnDialogueVars
 {
-	if reference0 == "next"; storyprogress[1]++
+	//if reference0 == "next"; currentstory[1]++
+	if reference0 == "onend"; currentstory[1]--
+	// ^ cancels out onaitalk's currentstory[1]++
 }
 back
 {
-	if storyprogress[1] <= 1; storyprogress[1] = 0
-	elseif storyprogress[1] == 1; storyprogress[1]--
-	else; storyprogress[1] -= 2
+	if currentstory[1] <= 1; currentstory[1] = 0
+	elseif currentstory[1] == 1; currentstory[1]--
+	else; currentstory[1] -= 2
 }
-end
-{
-	//handles random text at the end of a recording
-	//this should go in words but it fits better here imo
-	""
-	--
-	""
-}
+//end has been moved to aitalk due to becoming more complex (passing references)

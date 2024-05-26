@@ -1,3 +1,6 @@
+//feel free to use celeste as a template for stories but trust me it is SPAGHETTI code in here. 
+//i. dont like looking at this stuff its so roundabout and has so many edge cases LOL
+
 SakuraMenuGreetings : nonoverlap
 {
 	"Bzzt."
@@ -7,52 +10,140 @@ SakuraMenuGreetings : nonoverlap
 //Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
-	"\0\b2\![set,autoscroll,disable]"
+	"\p[2]\b[100]\![set,autoscroll,disable]"
 	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
 	
 	"\n\n[half]\_q"
 	
-	"\![*]\q[Next,OnAiTalk]"
+	if "OnEnd" !_in_ SHIORI3FW.LastAITalk; "\![*]\q[Next,OnAiTalk]"
+	else; 						"((\![*]Next))"
 	"  "
-	if LastTalk != "";			"\![*]\q[Repeat,OnLastTalk]"
-	else; 						"((\![*]Repeat))"
+	if LastTalk != "";			"\![*]\q[Repeat,OnLastTalk,LastTalk]"
+	else; 						"\![*]\q[Repeat,OnAiTalk,Current]"
 	"  "
-	if storyprogress[1] >= 0; 	"\![*]\q[Rewind,OnRewind]"
+	if currentstory[1] > 0; 	"\![*]\q[Rewind,OnRewind,Current]"
 	else; 						"((\![*]Rewind))"
 	"\n\n[half]"
 	
-	"\![*]\q[Chapter Select,OnChapterMenu]\n"
+	"Current: \_a[OnChapterMenu]%(CurrentChapterLabel)\_a\n"
 	"Transmission Speed: \_a[OnTalkrate]%(TalkRateLabel(aitalkinterval))\_a"
 	"\n\n[half]"	
 	
-	"\![*]\q[Back,blank]"	
+	"\![*]\q[Close,blank]"	
 }
 
 OnTalkrate
 {
 	case aitalkinterval
 	{
-		when 0, 30, 60; aitalkinterval += 30
-		when 90; aitalkinterval = 180
+		when 0, 30; aitalkinterval += 30
+		when 60; aitalkinterval = 180
 		when 180; aitalkinterval = 300
 		when 300; aitalkinterval = 600
 		others; aitalkinterval = 0
 	}
-	OnKeroMenu
+	OnSakuraMenu
 }
 
 //relevant talk interval display code in utility.dic (by zi :3 thanks zi)
 
+//not flexible cuz i dont feel like using it elsewhere (not even the chapter menu bc i already did it LOL)
+CurrentChapterLabel
+{
+	switch currentstory[0]
+	{
+		"I'm Celeste!"
+		"That's what peace means!"
+		"Can't you tell me what to do?"
+		"What's in a dream?"
+		"And then you took it from me."
+		"Peace is restored!"
+		"Tell me what to do!"
+		"In the end, it's still you."
+		"None."
+	}
+}
+
 OnLastTalk
 {
 	LastTalk
+	//lasttalk breaks in certain places, like if youve been jumping around using script input, but shouldnt be a problem in normal play
+	//i wish i could axe it entirely but i think shiori has it as an internal thing (shiori3fw.lasttalk and shiori3fw.lastaitalk)
+	//actually wait. those are separate variables i could just choose to never use. hm.
+	//idc im lazy i already did all this work and i DONT want to undo it LOLL
 }
 
 OnRewind
 {
-	if storyprogress[1] <= 1; storyprogress[1] = 0
-	elseif storyprogress[1] == 1; storyprogress[1]--
-	else; storyprogress[1] -= 2
+	if currentstory[1] < 1; currentstory[1] = 0
+	elseif currentstory[1] >= 1 && "OnEnd" !_in_ SHIORI3FW.LastAITalk; currentstory[1]--
 
-	OnAiTalk
+	"\![raise,OnAiTalk,%(reference0)]"
+}
+
+//-----
+
+OnChapterMenu : all
+{
+	"\p[2]\b[100]\![set,autoscroll,disable]\_q"
+
+	"\![*]1: \_a[OnChapterSelect,0]I'm Celeste!\_a\n"
+	"  ((One of Celeste's performances.))\n"
+	
+	if storestory[0] < 1 {"\![*]2: That's what peace means!\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]2: \_a[OnChapterSelect,1]That's what peace means!\_a\n"
+	"  ((An interview and battle broadcast.))\n"}
+	
+	if storestory[0] < 2 {"\![*]3: Can't you tell me what to do?\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]3: \_a[OnChapterSelect,2]Can't you tell me what to do?\_a\n"
+	"  ((A conversation in the Sun's Light.))\n"}
+	
+	if storestory[0] < 3 {"\![*]4: What's in a dream?\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]4: \_a[OnChapterSelect,3]What's in a dream?\_a\n"
+	"  ((A confession to a dear friend.))\n"}
+	
+	if storestory[0] < 4 {"\![*]5: And then you took it from me.\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]5: \_a[OnChapterSelect,4]And then you took it from me.\_a\n"
+	"  ((The truth is hard to swallow.))\n"}
+	
+	if storestory[0] < 5 {"\![*]6: Peace is restored!\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]6: \_a[OnChapterSelect,5]Peace is restored!\_a\n"
+	"  ((Celeste's great victory.))\n"}
+	
+	if storestory[0] < 6 {"\![*]7: Tell me what to do!\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]7: \_a[OnChapterSelect,6]Tell me what to do!\_a\n"
+	"  ((After everything, something's still missing.))\n"}
+	
+	if storestory[0] < 7 {"\![*]8: In the end, it's still you.\n"
+	"  ((Not unlocked.))\n"}
+	else {"\![*]8: \_a[OnChapterSelect,7]In the end, it's still you.\_a\n"
+	"  ((Fenara's greatest messenger.))\n"}
+	
+	"\n"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Close,blank]"
+}
+
+OnChapterSelect : all
+{
+	//literally no checks for cheating because i do not care at all
+	currentstory[0] = reference0
+	currentstory[1] = 0
+
+	"\![raise,OnAiTalk,Current]"
+}
+
+OnChapterChange
+{
+	//also no checks for cheating/edge cases because those should be accounted for already
+	//if u call this using script input thats on u
+	if reference0 == "next"; currentstory[0]++
+	elseif reference0 == "back"; currentstory[0]--
+	currentstory[1] = 0
+	"\![raise,OnAiTalk,Current]"
 }

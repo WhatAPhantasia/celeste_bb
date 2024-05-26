@@ -12,6 +12,13 @@ craftmanurl,https://whataphantasia.github.io/projects/ukagaka/
 sakura.name,Celeste
 kero.name,Recordings
 
+sakura.defaultx,0
+sakura.defaulty,0
+kero.defaultx,0
+kero.defaulty,0
+
+balloon,Closed Solar Captions
+
 icon,microphone.ico
 
 sstp.allowunspecifiedsend,0

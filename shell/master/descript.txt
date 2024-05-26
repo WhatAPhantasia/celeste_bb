@@ -6,5 +6,7 @@ craftman,WhatAPhantasia
 craftmanw,WhatAPhantasia
 craftmanurl,https://whataphantasia.github.io/projects/ukagaka/
 
+seriko.zorder,2,1,0
+
 seriko.alignmenttodesktop,free
 seriko.use_self_alpha,1

@@ -1,14 +1,18 @@
 OnFirstBoot
 {
-	stroke = 0
+	stroke = 0				//i dont really need this but we'll keep it just in case
 	LastTalk = ""
 	currentstory = (0,0) 	//[0] +1 for each chapter
 							//[1] +1 or -1 for each dialogue in the chapter
-	seenstory = 0 			//the above is to keep track of where the user is in the story
-							//this variable keeps track of how many chapters you've completed overall.
-	MiscFlags = IARRAY
+							//the above is to keep track of where the user is in the story
+	storestory = (0,0)		//[0] unlocked chapters (index starts at 0)
+							//[1] completed chapters (index starts at 1)
+							//theres currently no failsafes for if a user accesses a chapter early, like through script input. it'll just be broken. i'll fix that later.
+	MiscFlags = IARRAY		//just in case i want it :3
+
+	"%(s.init)"
 	
-	OnStory.One
+	OnStory.1
 }
 
 OnInitialize
@@ -25,12 +29,13 @@ OnInitialize
 		LastTalk = ""
 	}
 	//failsafes
-	if !ISVAR("storyprogress"); storyprogress = (0,0)
+	if !ISVAR("currentstory"); currentstory = (0,0)
+	if !ISVAR("storestory"); storestory = (0,0)
 }
 
 OnBoot
 {
-	"%(s.base)"
+	"%(s.init)\p[2]\b[100]"
 	--
 	"--Bzzzt. \w8Here you are again."
 	"--Bzzzt. \w8The recordings are still here."
@@ -38,7 +43,14 @@ OnBoot
 
 OnClose
 {
-	"\1That's enough. \w8You turn off the screen, and turn away."
+	"\p[2]\b[100]"
+	--
+	"That's enough. \w8You shut off the screen, \w4and turn away."
 	--
 	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
+}
+
+OnShellChanged
+{
+	"%(s.init)"
 }

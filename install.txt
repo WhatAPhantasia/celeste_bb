@@ -3,3 +3,4 @@ type,ghost
 
 name,Celeste
 directory,celeste_bb
+balloon.directory,closed_solar_captions

@@ -9,6 +9,24 @@ OnTranslate
 	}
 	
 	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
+
+	if SHIORI3FW.BalloonName != "Closed Solar Captions"
+	{
+		_talk = REPLACE(_talk, "\b[100]", "\b2")
+		_talk = REPLACE(_talk, "\b[8]", "\b2")
+		_talk = REPLACE(_talk, "\b[12]", "\b2")
+		_talk = REPLACE(_talk, "\b[18]", "\b2")
+		_talk = REPLACE(_talk, "\b[6]", "\b0")
+		_talk = REPLACE(_talk, "\b[10]", "\b0")
+		_talk = REPLACE(_talk, "\b[16]", "\b0")
+	}
+	
+	if reference2 == "OnLastTalk" || reference3 == "LastTalk" || reference2 == "OnRewind"
+	{
+		//_talk = REPLACE(_talk, "\![raise,OnDialogueVars,next]", "")
+		// ^ deprecated
+		_talk = REPLACE(_talk, "\![raise,OnDialogueVars,onend]", "")
+	}
 	
 	TOSTR(_talk)
 }
@@ -21,10 +39,34 @@ OnAnchorSelect
 	{
 		case reference0
 		{
-			when key
+			when "key"
 			{
-				_i = storyprogress[0] + 1
-				storyprogress[0] = _i
+				//can't just do a simple increment. need to check currentstory and match it up with storestory, etc
+				//STORESTORY[0] STARTS AT 0, STORESTORY[1] STARTS AT 1
+				//set unlocked chapters.
+				_next = currentstory[0] + 1
+				_temp = storestory[0]
+				if storestory[0] < _next; storestory[0]++
+
+				"\t\*\p[2]\b[100]"
+				--
+				switch currentstory[0]
+				{
+					"Peace... \w8They'd never make her say this nowadays."
+					"It's hard being on a screen. \w8People see your every doubt."
+					"Chapter three."
+					"Chapter four"
+					"Chapter five."
+					"Chapter six."
+					"Chapter seven"
+					"Chapter eight."
+				}
+				--
+				"\w8\_q\n\n\![*] "
+				--
+				if _temp <= currentstory[0] && currentstory[0] < 7; "\q[You've found another recording.,blank]"
+				elseif _temp <= currentstory[0] && currentstory[0] == 7; "\q[That's all of them.,OnEpilogue]" //maybe add short epilogue? 
+				else; "\q[Back,blank]"
 			}
 		}
 	}
@@ -41,13 +83,13 @@ OnKeyPress
 //Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
 OnSurfaceRestore
 {
-	"\1\s[10]\0\s[0]"
+	"%(s.init)%(s.base)"
 }
 
 //Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
 OnWindowStateRestore
 {
-	"\1\s[10]\0\s[0]"
+	"%(s.init)%(s.base)"
 }
 
 //Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
@@ -61,7 +103,7 @@ OnWindowStateRestore
 //Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
-	""
+	"https://raw.githubusercontent.com/WhatAPhantasia/celeste_bb/master/celeste_bb/"
 }
 
 
@@ -87,7 +129,8 @@ On_sakura.recommendsites
 //These are the websites linked in the top option of the sakura's right click menu. The format is simple; write the label of the link on the left followed by a semicolon, and then on the right, the url to link to. These should be separate strings.
 recommendsites_sakura : array
 {
-	"Link label";	"https://link.example.com/link/to/whatever/here/"
+	"Bramblebrush Toyhou.se"; "https://toyhou.se/WhatAPhantasia/characters/folder:2534157"
+	"Celeste's Toyhou.se Page"; "https://toyhou.se/19345806.celeste-lockheart/23631459.celeste-bb"
 }
 
 On_sakura.portalsites 
@@ -98,8 +141,12 @@ On_sakura.portalsites
 //These are the websites linked in the second option of the sakura's right click menu. Same as above
 portalsites_sakura : array
 {
-	"Another link label";	"https://link.example.com/link/to/whatever/here/again/"
-	"A third link label";	"https://link.example.com/link/to/whatever/a/third/time/you/can/add/as/many/as/you/want/"
+	"Download Page"; "https://whataphantasia.github.io/projects/ukagaka/ghosts/celeste"
+	"Changelog (G. Docs)"; "https://docs.google.com/document/d/10yy69A5hkizTPMh1mmRISIDg8M3JMfOdL9abrYmme20/edit?usp=sharing"
+	"Phantasia's Website"; "https://whataphantasia.github.io/"
+	""; ""
+	"Simplicity v1.0.8"; "https://github.com/Zichqec/simplicity_template"
+	"Ukagaka Dream Team Wiki"; "https://ukagakadreamteam.com/wiki/"
 }
 
 On_kero.recommendsites
@@ -110,7 +157,7 @@ On_kero.recommendsites
 //These are the websites linked in the first option of the kero's right click menu. Same as above
 recommendsites_kero : array
 {
-	"These labels can be anything you want";	"https://link.example.com/link/to/whatever/here/once/more/"
+	"How are you seeing this";	"https://link.example.com/link/to/whatever/here/once/more/"
 }
 
 
