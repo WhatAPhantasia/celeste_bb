@@ -14,3 +14,6 @@ Premade assets used:
 Simplicity Template v1.0.8 https://github.com/Zichqec/simplicity_template
 Markdown Processor v1.0.2 https://ukagaka.zichqec.com/function/index#markdown_processor
 TalkRateLabel v1.0.0 https://ukagaka.zichqec.com/function/index#talkratelabel
+
+Art, writing, coding:
+WhatAPhantasia https://whataphantasia.github.io/

@@ -48,6 +48,7 @@ OnDialogueVars
 	if reference0 == "onend"; currentstory[1]--
 	// ^ cancels out onaitalk's currentstory[1]++
 }
+//lmao wait do i even use this. i could find this out easily but idc im leaving it here
 back
 {
 	if currentstory[1] <= 1; currentstory[1] = 0

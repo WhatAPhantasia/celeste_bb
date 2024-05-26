@@ -40,7 +40,7 @@ OnCurrentStory
 
 OnStory.1 : all
 {
-	//I’m Celeste!
+	//I'm Celeste!
 	//(one of her performances (firstboot)) short
 
 	switch currentstory[1]
@@ -66,8 +66,8 @@ OnStory.1 : all
 
 OnStory.2 : all
 {
-	//That’s what peace means!
-	//(This recording is about Celeste’s combat capabilities, and the Fenara government’s thoughts about the tensions between Fenara and Valaria. Cel is protecting the capitol against monsters, showing off her weapon :3 at the start :3)
+	//That's what peace means!
+	//(This recording is about Celeste's combat capabilities, and the Fenara government's thoughts about the tensions between Fenara and Valaria. Cel is protecting the capitol against monsters, showing off her weapon :3 at the start :3)
 	
 	switch currentstory[1]
 	{
@@ -159,7 +159,7 @@ OnStory.2 : all
 
 OnStory.3 : all
 {
-	//Can’t you tell me what to do? 
+	//Can't you tell me what to do? 
 	//(Agastache and Cel, her praying to Fenr)
 	
 	switch currentstory[1]
@@ -221,15 +221,45 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
-			"\0Ah! \w8I know I'm being a downer right now, sorry.\w8\w8"
-			"\1\b[12]It's okay, remember? \w8We've done this a lot. \w8Resonants are _here_ to be complained to, Celeste. \w8By extension, \w2_I'm_ here to be complained to.\w8\w8\0\x"
-			"\0\b2Hehehehe. \w8Yeah, I guess I just... \w8Lately, I haven't felt like I've been \w6allowed \w2to.\w8\w8"
-			"\1\b[10]All your responsibilities?\w8\w8"
-			"\0 Yeah."
+			"\0Ah! \w8I know I'm being a downer right now, sorry!\w8\w8"
+			"\1\b[12]It's okay, remember? \w8We've done this a lot. \w8Resonants are _here_ to listen to people's worries. \w8In short, \w2I'm here to be complained to.\w8\w8\0\x"
+			"\0\b2Hehehehe-- \w8Yeah, I guess I just... \w8Lately, \w2I haven't felt like I've been \w6allowed \w2to.\w8\w8"
+			"\1\b[10]All of those responsibilities?\w8\w8"
+			"\0\nYeah."
 			"%(next)"
 		}
 		{
-			""
+			"\1\b[12]In the Sun's Light, \w8consider yourself free of those responsibilities. \w8You're a child of the Sun. \w8This is your resting place.\w8\w8"
+			"\0Mhmm.\w8\w8\x"
+			"\1\b[12]Celeste. \w8Truly, you should be more confident. \w8You have a gift. \w8Fenr made _you_ special. \w8Nothing can take that away from you.\w8\w8"
+			"\0...\w8Yeah." //neutral --> smile
+			"%(next)"
+		}
+		{
+			"\1\b[10]Your devotions earlier were beautiful.\w8\w8"
+			"\0Oh! \w8Thank you!\w8\w8"
+			"\1\nOut of curiosity, \w2what was it that you mumbled afterwards?\w8\w8"
+			"\0\nAh. \w8Um."
+			"%(next)"
+		}
+		{
+			"\0I mean, \w8Agastache, \w8\w4don't you think the Caretaker's virtues are kinda...\w8\w8"
+			"\1\b[10]...\w8\w8"
+			"\0\nYou look \w8disappointed. \w8\w4Are you disappointed in me?"
+			"%(next)"
+		}
+		{
+			"\1\b[10]No. \w8You can confess anything to me, \w2Celeste.\w8\w8"
+			"\0... \w8It's not that I'm \w2doubting him \w2or anything. \w8It just seems pretty irresponsible to put us all on the Bramblebrush with a virute that can be twisted into whatever people want it to be. \w8Like \w4for violence, \w8or selfishness...\w8\w8\x"
+			"\0Strength, \w4I mean. \w8That can mean anything."
+			"%(next)"
+		}
+		{
+			"\1\b[10]Celeste, it's your role to interpret what strength means for all of Fenr's devotants.\w8\w8"
+			"\0...Yeah. \w8I know.\w8\w8\x"
+			"\1\b[10]Then why are you so aimless? \w8There must be something.\w8\w8"
+			"\0That's what I'm asking you...!"
+			"%(next)"
 		}
 		{
 			"\![raise,OnDialogueVars,onend]\![raise,OnEnd]"
@@ -239,7 +269,7 @@ OnStory.3 : all
 
 OnStory.4 : all
 {
-	//What’s in a dream? 
+	//What's in a dream? 
 	//(Tahir and Cel talking in the garden)
 
 	switch currentstory[1]
@@ -251,18 +281,146 @@ OnStory.4 : all
 		}
 		{
 			"\0Um... \w8Okay, \w4it needs water, \w4but where do I...\w8"
-			"\1Water, yes. \w8Sunflowers are greedy about that. \w8Otherwise, thought, it's perfectly healthy.\w8\w8"
-			"\0\n\n[half]Huh?\w8\w8\x"
-			"\1This plot has mature sunflowers. \w8The weight of the seeds naturally make the flower droop.\w8\w8"
+			"\1\b[6]Water, yes. \w8Sunflowers are greedy about that. \w8Otherwise, \w2though, \w4it's perfectly healthy.\w8\w8"
+			"\0\nHuh?\w8\w8\x"
+			"\1\b[6]This plot has mature sunflowers. \w8The weight of the seeds naturally make the flower droop.\w8\w8"
 			"\0Then, um... \w8It's \w4okay?"
 			"%(next)"
 		}
 		{
-			"\1It could certainly be _better._ \w8This is the display patch, and this variety should have a strong enough stem to handle the flower bed. \w8The dry soil doesn't look good, either.\w8\w8\x"
-			"You'd expect better out of this Light. \w4It's the biggest in the capitol? \w8Known for the _beautiful gardens?_ \w8What group of Resonants looked over this patch? \w8I'd like to have a word with them, they're being so careless.\w8\w8\x"
+			"\1\b[8]It could certainly be _better._ \w8This is the display patch, and this variety should have a strong enough stem to handle the flower head. \w8The dry soil doesn't look good, either.\w8\w8\x"
+			"\1\b[8]You'd expect better out of this Light. \w4It's the biggest in the capitol? \w8Known for the _beautiful gardens?_ \w8What group of Resonants looked over this patch? \w8I'd like to have a word with them, they're being so careless.\w8\w8\x"
 			"\0Haha! Hey, if they heard you saying that, they'd be heartbroken!\w8\w8"
-			"\1It's the truth, Cel."
+			"\1\b[6]It's the truth, Cel."
 			"%(next)"
+		}
+		{
+			"\0Okay, okay... \w8I don't doubt that. \w8And I'm only saying that cause I know _you're_ the reason this place is so neat.\w8\w8"
+			"\1\b[6]..." //awwww he's blushing
+			"%(next)"
+		}
+		{
+			"\0Hi, Tahir.\w8\w8\w8"
+			"\1\b[6]...\w4Yes?\w8\w8\0\x"
+			"\0You're supposed to say hi back. \w8You totally just snuck up on me just now.\w8\w8\w4"
+			"\1\b[6]Oh. \w8Hello, \w4Cel.\w8\w8\0\x"
+			"\0Hehehe. \w8There you go."
+			"%(next)"
+		}
+		{
+			"\0So, \w8um, \w8what are we planning on doing about this? \w8The sunflowers.\w8\w8"
+			"\1\b[6]Ah. \w8First, I'd like to prop them up with something. \w8There should be stakes in the shed somewhere.\w8\w8\0\x"
+			"\0Okay! \w8Let's go together!"
+			"%(next)"
+		}
+		{
+			"\1\b[6]Cel.\w8\w8"
+			"\0Yes?\w8\w8"
+			"\1\nIs there something on your mind?\w8\w8\w8"
+			"\0\n...\w8Okay, \w8why is \w2_everyone_ \w2asking me that?\w8\w8\x"
+			"\1\b[6]It's only natural that I'd ask. \w8People talk. \w8And it doesn't seem like you've been happy with how things are going lately.\w8\w8"
+			"\0..."
+			"%(next)"
+		}
+		{
+			"\1\b[6]...I worded that horribly, \w8didn't I?\w8\w8"
+			"\0No! \w8Well. \w8Only a little bit. \w8\w4What do you mean \w2""people talk?""\w8\w8\x"
+			"\1\b[6]You're Fenara's media darling. \w8Of course people talk.\w8\w8"
+			"\0Yeah, but I haven't seen anyone, \w4like, \w4mentioning \w4anything..."
+			"%(next)"
+		}
+		{
+			"\1\b[8]There's a rumor going around that Fenr isn't talking to you about the Resonance Accumulation incident. \w8I overheard some jerks in the Forces doubting you. \w8Of course I'd be worried.\w8\w8"
+			"\0W-What?"
+			"%(next)"
+		}
+		{
+			"\0\b2T-Tahir, no one was supposed to know about any of that. \w8I only told one person about this. \w8But, \w4um, \w6to be fair, \w8I was being kind of loud...\w8\w8\w8"
+			"\1\b[6]Cel, you've really got to be more careful..."
+			"%(next)"
+		}
+		{
+			"\1\b[6]Ah, I found some stakes.\w8\w8"
+			"\0Is that enough?\w8\w8"
+			"\1\nYes. \w8About 25 or so, \w4to be safe.\w8\w8"
+			"\0\nHahaha, oh wow! \w8Is this gonna take a bit?\w8\w8\x"
+			"\1\b[6]Yeah. \w8Are you sure you want to help me with this?\w8\w8"
+			"\0Mhmm! \w8I've got a lot of time on my paws today!\w8\w8"
+			"\1\nAlright. \w8Can you get some watering cans, too?"
+			"%(next)"
+		}
+		{
+			"\0Wow, \w2Tahir, \w2you're strong!\w8\w8"
+			"\1\b[6]O-Oh. \w8I suppose.\w8\w8\0\x"
+			"\0Has anyone told you that you blush super easily?\w8\w8"
+			"\1\b[6]..."
+			"%(next)"
+		}
+		{
+			"\1\b[8]I apologize for bringing up the whole rumor thing. \w8I know this is your dream, \w8and you already know that there's some jerks out there who are going to twist your words. \w8I could beat them up for you?\w8\w8"
+			"\0PFFT-- \w8Tahir, no!"
+			"%(next)"
+		}
+		{
+			"\0Actually. \w8Yeah, go ahead!\w8\w8"
+			"\1\b[6]Of course.\w8\w8\0\x"
+			"\0\b2HAHAHA, okay, but really! \w8I'll be fine either way! \w8I just have to show everyone I've still got it in my next few public showings. \w8I'm looking forward to it.\w8\w8\w2"
+			"\1\b[6]I see. \w8I have no idea how you do all that... \w8The public speaking.\w8\w8\0\x"
+			"\0It's fun! \w8I get to be all peppy and showy, \w4and wear a pretty dress!"
+			"%(next)"
+		}
+		{
+			"\1\b[6]And... \w8It's all \w6_worth it,_ \w8right?\w8\w8"
+			"\0\b2Definitely! \w8Seeing everyone's happy, smiling faces... \w8A peaceful Fenara. \w8And a peaceful Valaria. \w8\w4That's my dream. \w8I know in my heart that it's worth it.\w8\w8\x"
+			"\1\b[6]That's a lot for one person.\w8\w8"
+			"\0\b2It's not ALL me! \w8I'm just cheering on everyone else! \w8Like I'm helping you with these flowers, right? \w8Ehehe~ \w8They're looking happier already!\w8\w8"
+			"\1\nPfft..."
+			"%(next)"
+		}
+		{
+			"\1\b[6]Not \w4everyone's \w2going \w2to \w2help \w2you \w2too, \w8you know.\w8\w8"
+			"\0What?\w8\w8\x"
+			"\1\b[6]What I mean \w2is that \w4not everyone that claims to want to help you \w4has your best interests in mind. \w8Especially \w2not here.\w8\w8\w4"
+			"\0Yeah. \w8I know.\w8\w8\x"
+			"\1\b[6]I know you know. \w8You have it harder than most of us.\w8\w8"
+			"\0..."
+			"%(next)"
+		}
+		{
+			"\0You won't \w8tell anyone what I'm about to say, \w8right?\w8\w8"
+			"\1\b[6]Are you sure?\w8\w8\0\x"
+			"\0Tahir. \w8I know you. \w8If I'm going to trust one person, it's going to be you. \w8I don't care.\w8\w8\w8"
+			"\1\b[6]...I understand. \w8I trust you, \w2too."
+			"%(next)"
+		}
+		{
+			"\0Is this... \w8Is what I'm doing right now \w2what I really want?\w8\w8"
+			"\1\b[6]...\w8\w8\0\x"
+			"\0\b2I mean, \w8not helping the flowers with you. \w8This is one thing that I know for sure that I want. \w8I mean everything _else._ \w8The performances.\w8\w8"
+			"\1\b[6]Yeah?\w8\w8\0\x"
+			"\0\b2I'm making people happy. \w4I know that. \w8That makes me happy. \w8But it kinda feels like... \w8I'm not doing what I _want._ \w8\w2I can't place it at all."
+			"%(next)"
+		}
+		{
+			"\1\b[6]You feel like nothing you're doing is your own choice?\w8"
+			"\0N-No! \w6No, \w4not _everything._\w8\w8\x"
+			"\1\b[6]Yes, sure, \w8then at least _some_ things.\w8\w8"
+			"\0\b2Yeah. \w8And \w4I don't know why. \w8I like making people happy, \w2and that's what I'm doing, \w2so does that mean... \w8I don't know what I want at all? \w8That this entire dream has been something I don't even believe in? \w8I don't...\w8\w8"
+			"\1\nCel. \w8Look at me."
+			"%(next)"
+		}
+		{
+			"\1\b[6]Cel, listen to me. \w4You're not being irrational. \w8You know how my superiors are using me, I've told you this, \w2right?\w8\w8"
+			"\0Y-Yeah?\w8\w8\x"
+			"\1\b[6]You're being \_a[key]used,\_a \w4too. \w8More than you think you're being used.\w8\w8\w8"
+			"\0What?"
+			"%(next)"
+		}
+		{
+			"\1\b[16]What do you two think you're doing?\w8\w8\x\e"
+		}
+		{
+			"\![raise,OnDialogueVars,onend]\![raise,OnEnd]"
 		}
 	}
 }
@@ -335,7 +493,7 @@ OnStory.7 : all
 
 OnStory.8 : all
 {
-	//But in the end, it’s still you. 
+	//But in the end, it's still you. 
 	//(Tahir leaving AUGHEG and then everything returning to the status quo KMS)
 	
 	switch currentstory[1]
@@ -390,7 +548,7 @@ OnEnd
 		}
 		//3
 		{
-			"You never liked that guy. \w8He just didn't understand."
+			"He was well meaning. \w8But he never really understood her."
 			"Something about Agastache's voice was grating to you."
 		}
 		//4
@@ -399,23 +557,23 @@ OnEnd
 		}
 		//5
 		{
-			
+			"It all seemed so hopeless."
 		}
 		//6
 		{
-			
+			"You don't think you can see her like this again."
 		}
 		//7
 		{
-			
+			"Did she... \w8Did she record this herself?"
 		}
 		//8
 		{
-			
+			"That's it, \w8then."
 		}
 	}
 	--
-	"\w8\n\n"
+	"\w8\w8\n\n"
 	--
 	if storestory[0] > currentstory[0]
 	{"\![*]\q[Next Recording,OnChapterChange,next]\n"}
