@@ -321,7 +321,7 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
-			"\0\s[25]%(aga.neut)\i[102]\u[46]"
+			"\0\s[25]%(aga.neut)\i[102]\i[46]"
 			"\b2Then... \w8Actually. \w8\![anim,stop,46]\i[50]Yeah. \w8\![anim,stop,50]\i[43]That's exactly what I mean.\n\w8\w4"
 			"\s[25]%(aga.neut)\i[81]\i[43]It was _awfully_ irresponsible for them to be so vague about everything, when we're supposed to be their soldiers. \w8It's like sending someone to battle with no orders.\w8\w8\x"
 			"\0\s[23]%(aga.close)\i[101]\i[82]\i[49]Out of anyone, \w2I deserve to think this. \w8I've actually _seen_ the guy! \w4\![anim,stop,49]\i[55]And I know that he--\w2"
@@ -331,6 +331,7 @@ OnStory.3 : all
 
 		}
 		{
+			"\0\s[25]%(aga.neut)\i[102]\i[82]\i[50]"
 			"\1\b[10]Do you hear yourself? \w8Sit down.\w8\w8"
 			"\0I... \w8Okay.\w8\w8\x"
 			"\1\b[12]Don't you understand? \w8As I was saying earlier, \w4the messages of the Caretakers are _complicated._ \w8Every single one of their messages has a meaning and greater purpose. \w8You need to be more _patient._\w8\w8"
@@ -338,22 +339,26 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.neut)\i[102]\i[82]\i[50]"
 			"\1\b[12]Starlight, \w4look... \w8These \w4doubts \w4are getting us nowhere. \w8We need to take a break. \w8\w4Perhaps \w4refocusing your Resonance \w4could help you clear your mind?\w8\w8"
 			"\0That... \w8That actually sounds \w6really nice right now. \w8Thank you."
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.close)\i[102]\i[82]\i[50]"
 			"\0.\w8.\w8.\w8\w8" //hand on resonance, glowing
 			"\1\b[10].\w8.\w8."
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.base)\i[102]\i[82]\i[50]"
 			"\0...\w6Ahhh. \w8That's nice. \w8My heart is warm.\w8\w8"
 			"\1\b[10]Much better now, yes?\w8\w8"
 			"\0\nYes. \w8Just a bit."
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.base)\i[102]\i[82]\i[50]"
 			"\1\b[10]How long will you be staying, Celeste?\w8\w8"
 			"\0...\w4Today? \w8This was supposed to be a short visit. \w8But \w2I do _not_ want to talk to Mrs. Velvet and the crew right now.\w8\w8\x"
 			"\1\b[12]Ahaha, I see. \w6I completely understand. \w8I shouldn't be one to advocate flaking your duties, \w2but I think you deserve a break, no?\w8\w8"
@@ -361,6 +366,7 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.base)\i[102]\i[82]\i[50]"
 			"\1\b[10]Truly... \w8The reason why you're aimless is most definitely because of all this doubt in your heart.\w8\w8"
 			"\0Huh?\w8\w8\x"
 			"\1\b[12]Yes. \w8You need to have stronger \_a[key]faith\_a in Fenr, \w2Celeste. \w8I know for a fact that it will lead you to the answers you need.\w8\w8"
@@ -368,6 +374,7 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.base)\i[102]\i[82]\i[50]"
 			"\0...\w8It's getting really stuffy in here.\w8\w8"
 			"\1\b[10]Ah, yes. \w8Lights get very hot this time of the day.\w8\w8"
 			"\0\nI'll... \w8I'll just step out for a moment, \w4okay?\w8\w8"

@@ -11,7 +11,7 @@ Keywords will pop up. Please continue the recording past clicking on the keyword
 
 --
 
-for jam, this is currently in a demo state. i gave up on adding expressions during the second chapter. sorry about that, ive been REALLY busy lately!
+for jam, this is currently in a DEMO STATE. i gave up on adding expressions during the second chapter. sorry about that, ive been REALLY busy lately!
 thats a lot of content warnings... i understand if this isn't your cup of tea!
 the main character goes through a lot, and this doesn't conclude with a happy ending.
 
