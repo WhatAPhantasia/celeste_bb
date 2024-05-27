@@ -17,9 +17,10 @@ OnCurrentStory
 		when 2; OnStory.3
 		when 3; OnStory.4
 		when 4; OnStory.5
-		when 5; OnStory.6
-		when 6; OnStory.7
-		when 7; OnStory.8
+		when 5; OnEpilogue.Temp
+		//when 5; OnStory.6
+		//when 6; OnStory.7
+		//when 7; OnStory.8
 	}
 	/*
 	switch currentstory[0]
@@ -46,14 +47,16 @@ OnStory.1 : all
 	switch currentstory[1]
 	{
 		{
-			"\0Good morning, sun-- \w8Good morning, you! \w8It's Cel, \w6your favorite idol and messenger of Fenr!\w8\w8"
+			"\0\s[0]\i[149]\i[140]\i[50]Good morning, \w4sun-- \w8\w8\s[0]\i[142]\i[140]\i[51]Good morning, \w4you! \w8\s[0]\i[142]\i[140]\i[35]It's Cel, \w6your favorite idol and messenger of Fenr!\w8\w8"
 			"\1[APPLAUSE AND CHEERING]\w8\w8\0\x"
-			"Hehehe! \w8Aw, you're all so kind!\w8\w8\x"
-			"Now... \w8Please lend me your ears, everyone!"
+			"\s[0]\i[149]\i[140]\i[90]\i[51]Hehehe! \w8Aw, you're all so kind!\w8\w8\x"
+			"\s[0]\i[149]\i[140]\i[50]Now... \w8\s[0]\i[142]\i[140]\i[51]Please lend me your ears, everyone!"
 			"%(next)"
 		}
 		{
+			"\0\s[0]\i[141]\i[140]\i[50]"
 			"🎵 I love, love, love, to fill the creases in your heart,\w8\w8\x"
+			"\0\s[0]\i[141]\i[140]\i[51]"
 			"🎵 In the end, in the end, we'll paint together a \_a[key]peace\_a of art! 🎵"
 			"%(next)"
 		}
@@ -72,38 +75,46 @@ OnStory.2 : all
 	switch currentstory[1]
 	{
 		{
-			"\1Miss Celeste, \w8what does peace mean to you?\w8\w8"
-			"\0Peace... \w8It's more simple than everyone makes it out to be, mister.\w8\w8\x"
-			"\0\b2We all want to be happy, \w6and safe. \w8I want to make music that inspires everyone to help each other to be the happiest we can be. \w8That's not naive at all. \w8I _know_ it's possible.\w8\w8"
+			"\0\s[0]"
+			"\1Miss Celeste, \w8what does peace mean to you?\w8\w8\w8"
+			"\0\i[50]"
+			"Peace... \w8\w8\s[0]It's way simpler than what everyone makes it out to be, \w4mister.\w8\w8\x"
+			"\0\s[0]\i[141]\i[50]\b2"
+			"We all want to be happy, \w6and safe. \w8\w8\![anim,stop,50]\i[40]I want to make music that inspires everyone to help each other to be the happiest we can be. \w8\w8\s[0]\i[141]\i[50]That's not naive at all. \w8I _know_ it's possible.\w8\w8"
 			"\1Oh! \w8How noble, Miss Celeste!\w8\w8\0\x"
-			"\0Hardly! \w8You want to protect the people you love, don't you?\w8\w8"
+			"\0\s[0]\i[51]Hardly! \w8You want to protect the people you love, \w4don't you?\w8\w8"
 			"\1Hahaha, yes, of course."
 			"%(next)"
 		}
 		{
-			"\0\b2That's why I'm doing my part to protect Fenara from the mass influx of monsters lately. \w8I know it's a scary time, \w4everyone, \w6but we can do it if we all work together!\w8\w8"
+			"\0\s[0]\i[141]\b2"
+			"That's why I'm doing my part to protect Fenara from the mass influx of monsters lately. \w8\w2\s[1]\i[141]\i[81]I know it's a scary time, \w4everyone, \w6but we can do it if we all work together!\w8\w8"
 			"\1Oh, yes. \w8Volunteering for your local Force is the best way to serve your community.\w8\w8\0\x"
-			"\0Mhmm! \w8And you know your number one idol will be right behind you, supporting you all the way!"
+			"\0\s[0]\i[51]Mhmm! \w8\s[0]\i[142]\i[51]And you know your number one idol will be right behind you, \w4supporting you all the way!"
 			"%(next)"
 		}
 		{
+			"\0\s[0]"
 			"\1Your latest battle broadcast was impressive, Miss Celeste. \w8The way you handled that Lunar Zone was so intense!\w8\w8"
-			"\0\b2Ehehehe, \w4awww, \w4you're embarrassing me! \w8Thank you, Mr. Speaks! \w8I'm still getting used to the new upgrades on Rose here, honestly, \w4but \w4I think I'm starting to get it!\w8\w8\x"
+			"\0\s[0]\i[90]\i[82]\i[51]\b2Ehehehe, \w4awww, \w4you're embarrassing me! \w8\w8\s[0]\i[141]\i[90]\i[82]Thank you, Mr. Speaks! \w8\w8\w8\s[0]\i[180]\i[90]\i[82]\i[44]\i[34]I'm still getting used to the new upgrades on Rose here, honestly, \w4but \w8\s[0]\i[180]\i[90]\i[51]\i[35]I think I'm starting to get it!\w8\w8\x"
 			"\1I'd certainly say you are.\w8\w8"
 			"\0Ehehe~"
 			"%(next)"
 		}
 		{
-			"\0My next battle broadcast is coming to you now, live on location at The Sun's Light!\w8\w8"
+			"\0\s[0]\i[180]"
+			"My next battle broadcast is coming to you now, live on location at The Sun's Light!\w8\w8"
 			"\1Oh dear... \w8Are the Resonants okay? \w8What about the people at the Light?\w8\w8\0\x"
-			"\0\b2Not to worry, folks! \w8The Resonants at The Sun's Light are the STRONGEST Resonants out there! \w8It IS the Light of the capitol, after all! \w8Everyone at service has been accounted for!\w8\w8"
+			"\0\i[51]\b2Not to worry, folks! \w8The Resonants at The Sun's Light are the STRONGEST Resonants out there! \w8\s[0]\i[180]\i[41]It IS the Light of the capitol, after all! \w8\w8\s[0]\i[180]\i[51]Everyone at service has been accounted for!\w8\w8"
 			"\1Thank Fenr! \w8Tell us, what kind of threat are you facing today?\w8\w8\0\x"
-			"\0\b2There's a REALLY strong Sunsprite making a mess of things! \w8It's your routine disturbance from Resonance Accumulation-- \w8Just sooner than we thought it'd be! \w8\w2Anyway, I'm on the case now!"
+			"\0\s[1]\i[180]\i[81]\b2There's a REALLY strong Sunsprite making a mess of things! \w8\i[50]It's your routine disturbance from Resonance Accumulation-- \w8\s[0]\i[180]\i[51]Just sooner than we thought it'd be! \w8\w2\i[35]Anyway, I'm on the case now!"
 			"%(next)"
 		}
 		{
+			"\s[12]"
 			"\0Good morning, sun-- \w8Good morning, you! \w8Surrender now, or else you're through!\w8\w8"
 			"\1And Miss Celeste is already at it! \w8Is that a bramble rune I see?\w8\w8\0\x"
+			"\0\s[13]"
 			"\1[ELECTRICAL BUZZING, \w8CRACKING]\w8\w8"
 			"\0--Oh gosh! \w8Wow, you're _mean!_ \w8Okay, okay, I'm locking in!\w8\w8\x"
 			"\1\b2This one's strong, folks! \w8See how physical attacks phase right through sprites? \w8Runes are the only thing that can knock them down in this state!\w8\w8"
@@ -111,7 +122,8 @@ OnStory.2 : all
 			"%(next)"
 		}
 		{
-			"\0“◯⊲◯◯⊳◯... \w8Oh! "
+			"\0\s[13]"
+			"\0◯⊲◯◯⊳◯... \w8Oh! "
 			"\1[AGGRESSIVE BUZZING]\w8\w8"
 			"\0Oh geez! \w2WOW, you're mad! \w8"
 			"\1\n [EXPLOSION]\w8\w8"
@@ -122,33 +134,43 @@ OnStory.2 : all
 			"%(next)"
 		}
 		{
+			"\0\s[13]"
 			"\0◯⊲◯◯⊳◯!\w8\w8"
 			"\1[VINES STRAINING]\w8\nShe's got it now, folks!\w8\w8\0\x"
 			"\0⊲●⊳●⊳●⊲! \w8"
 			"\1[SPARKLING]\w8\w8"
-			"\0Ah... \w8Done \w2and \w2done! \w8Farewell, \w2sunsprite."
+			"\0Ah... \w8\w8\s[0]\i[180]\i[51]Done \w8and \w8done! \w8\w8\![anim,stop,51]\i[50]Farewell, \w6sunsprite."
 			"%(next)"
 		}
 		{
-			"\0\b2Phew! \w8That sprite was pretty strong! \w8Thankfully, \w4the Light is safe and back to normal, \w2now, \w2and won't be seeing another incident like this for a while! \w8Not while I'm around~!\w8\w8"
+			"\0\s[0]\i[180]\i[82]\i[51]\b2"
+			"Phew! \w8That sprite was pretty strong! \w8\w4\s[0]\i[104]Thankfully, \w4the Light is safe and back to normal, \w2now, \w2and won't be seeing another incident like this for a while! \w8\i[51]\i[35]Not while I'm around~!\w8\w8"
 			"\1Goodness! \w8That got scary for a moment, are you alright?\w8\w8\0\x"
-			"\0Yup! \w8Not to worry, your number one idol can overcome _any_ challenge! \w8\w8\f[height,-2]No matter where it \_a[key]comes from,\_a apparently...\f[height,default]"
+			"\0\b2Yup! \w8\s[0]\i[104]\i[141]Not to worry, your number one idol can overcome _any_ challenge! \w8\w8"
+			"\s[0]\i[104]\i[45]\i[34]"
+			"\n\n[half]\f[height,-2]Even if \w4this \_a[key]wasn't on the schedule\_a...\f[height,default]"
 			"%(next)"
 		}
 		{
+			"\s[1]\i[104]"
 			"\1Ah, \w2my time with you is almost up. \w8Miss Celeste, \w2may I get some closing words from you?\w8\w8\w8"
-			"\0Already! \w8\w8Wow! \w8\w8Hmm..."
+			"\0Already! \w8\w8Wow! \w8\w8\i[44]Hmm..."
 			"%(next)"
 		}
 		{
-			"\0\b2Everyone, \w2please don't forget everything I've said today about peace and what we can do to achieve it! \w8If we all work together and listen to one another, \w4anything's possible!\w8\w8\x"
-			"\0\b2In times like these, \w2I know my words sound like sweet little platitudes... \w8But \w4I mean it! \w8And just like Fenr, \w2we \w4_all_ \w4have the strength to achieve our dreams!\w8\w8\x"
-			"\0\b2...And, of course, \w2remember to notify your local Force if you catch hint of any Valarian threat! \w8We can't achieve peace if they're attacking us, right?"
+			"\0\s[0]\i[101]\i[143]\b2"
+			"Everyone, \w2please don't forget everything I've said today about peace and what we can do to achieve it! \w8\i[51]If we all work together and listen to one another, \w4anything's possible!\w8\w8\x"
+			"\0\s[0]\i[101]\i[143]\i[82]\i[50]\i[34]\b2"
+			"In times like these, \w2I know my words sound like sweet little platitudes... \w8"
+			"\s[1]\i[101]\i[141]\i[81]But \w4I mean it! \w8\w6\s[0]\i[101]\i[141]\i[51]\i[35]And just like Fenr, \w2we \w4_all_ \w4have the strength to achieve our dreams!\w8\w8\x"
+			"\0\s[1]\i[101]\b2"
+			"...And, \w2of course, \w4remember to notify your local Force if you catch hint of any Valarian threat! \w8\i[82]We all know tensions are high now, \w8\s[0]\i[101]\i[82]but we can't achieve peace if they're attacking us, right?"
 			"%(next)"
 		}
 		{
+			"\s[0]\i[104]"
 			"\1Thank you for letting us come with you today, Miss Celeste.\w8\w8"
-			"\0Thank _you_ for accompanying me! \w8May the sun shine brightly upon you all!"
+			"\0\i[51]Thank _you_ for accompanying me! \w8\w8\s[0]\i[102]\i[142]\i[51]May the sun shine brightly upon you all!"
 			"%(next)"
 		}
 		{
@@ -166,54 +188,69 @@ OnStory.3 : all
 	{
 		{
 			//turned around
-			"\0\b2Fenr, \w8our Sun, \w8our light. \w8\w8Guide us with your sacred radiance. \w8\w8May we pursue strength, \w8may we pursure courage... \w8\w8In whatever form it may be.\w8\w8\x"
-			"...Whatever \w1form \w1it \w1may \w1be. \w8\w8Isn't that \w8so \w8open ended, \w8\w4Fenr?"
+			"\0\s[4]\i[141]\i[101]\i[50]\b2"
+			"Fenr, \w8our Sun, \w8our light. \w8\w8Guide us with your sacred radiance. \w8\w8May we pursue strength, \w8may we pursure courage... \w8\w8In whatever form it may be.\w8\w8\x"
+			"...\w8\![anim,stop,50]\i[45]Whatever \w1form \w1it \w1may \w1be. \w8\w8Isn't that \w8\![anim,stop,45]\i[41]\i[82]so \w8open ended, \w8\w4Fenr?"
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[91]\i[101]\i[141]%(aga.base)"
 			"\1\b[10]Celeste. \w8You're here early.\w8\w8"
-			"\0O-Oh! \w8Agastache!\w8\w8\x" //shock -> smile
-			"\1\b[12]It's good to see you, starlight. \w8You've been gone since that incident last week. \w8\w2They aren't \w4working you too hard, \w4are they?\w8\w8"
-			"\0Oh, hardly! \w8It's been a really productive week, Resonant, \w4I couldn't be happier!\w8\w8\x"
+			"\0O-Oh! \w8\w8\s[23]\i[102]%(aga.base)Agastache!\w8\w8\x" //shock -> smile
+			"\s[24]\i[102]%(aga.smile)\1\b[12]It's good to see you, starlight. \w8You've been gone since that incident a few days ago. \w8\w2\0\s[24]\i[102]%(aga.solemnsmile)\1They aren't \w8\0\s[24]\i[102]%(aga.solemn)\1working you too hard, \w4are they?\w8\w8"
+			"\0\s[23]\i[51]%(aga.solemn)Oh, hardly! \w8\i[35]It's been a really productive week, Resonant, \w4I couldn't be happier!\w8\w8\x"
 			"\1\b[10]Is that so...?\w8\w8\x"
 			"%(next)"
 		}
 		{
+			"\s[23]\i[51]%(aga.solemnsmile)"
 			"\1\b[10]I know what you're thinking when you have that look on your face. \w8What are you so unsure about?\w8\w8"
-			"\0Oh, \w8um...\w8\w8\x"
+			"\0Oh, \w8\w8\![anim,cancel,51]\i[91]\i[82]\i[45]um...\w8\w8\x"
 			"%(next)"
 		}
 		{
-			"\0It's just... \w8That Resonance Accumulation incident. \w8That was way sooner \w8and way more intense than last year, \w8right?\w8\w8"
-			"\1\b[10]Yes. \w8I understand your worry. \w8I share it. \w8Have you found out why it happened?\w8\w8\0\x"
-			"\0Well... \w8Not really. \w8Fenr is being _awfully_ cryptic today.\w8\w8"
+			"\0\s[24]\i[82]\i[45]%(aga.neut)"
+			"It's just... \w8\w2\![anim,cancel,45]\i[41]That Resonance Accumulation incident. \w8That was way sooner \w8\i[101]and way more intense than last year, \w8right?\w8\w8"
+			"\s[24]\i[41]\i[101]\i[82]%(aga.solemn)\1\b[10]Yes. \w8I understand your worry. \w8I share it. \w8\w8\0\s[24]\i[41]\i[101]\i[82]%(aga.neut)\1Have you found out why it happened?\w8\w8\0\x"
+			"\0\s[25]\i[101]\i[45]%(aga.neut)"
+			"Well... \w8Not really. \w8Fenr is being _awfully_ cryptic today.\w8\w8"
+			"\s[25]%(aga.etoo)\i[101]\i[45]"
 			"\1\b[10]As usual, then.\w8\w8"
-			"\0\nTotally."
+			"\0\n\![anim,stop,45]\i[50]Totally."
 			"%(next)"
 		}
 		{
-			"\0But... \w8You're right. \w8This is REALLY frustrating! \w8Especially when it's _now!_\w8\w8"
+			"\0\s[24]\i[102]\i[82]\i[45]%(aga.neut)"
+			"But... \w8You're right. \w8\s[25]%(aga.neut)\i[81]\i[41]This is REALLY frustrating! \w8\![anim,stop,81]\i[82]Especially when it's _now!_\w8\w8\s[25]%(aga.solemn)\i[82]\i[41]"
 			"\1\b[10]Oh?\w8\w8\0\x"
-			"\0Like... \w8Why can't he just... \w8I dunno. \w8TALK to me? \w8He's done it before. \w8\f[height,-2]Kind of.\f[height,default]\w8\w8"
-			"\1\b[10]Caretakers are busy beings, \w4and far above anyone in the Bramblebrush. \w8Their way of communicating--\w8\w8\0\x"
-			"\0\b2I know, I know. \w8I'm his messenger. \w8\w4And that means I have to interpret every little thing he does when he decides he's too busy for me."
+			"Like... \w8Why can't he just... \w8\s[25]%(aga.solemn)\i[102]\i[82]\i[45]I dunno. \w8\w8\![anim,stop,45]\i[41]TALK to me? \w8\w8He's done it before. \w8\w8\f[height,-2]\![anim,stop,41]\i[45]Kind of.\f[height,default]\w8\w8"
+			"\1\b[10]Caretakers are busy beings, \w4and far above anyone in the Bramblebrush. \w8\0\s[25]%(aga.close)\i[102]\i[81]\i[41]\1Their way of communicating--\w8\w8\0\x"
+			"\s[25]%(aga.neut)\i[102]\i[81]\i[41]"
+			"\0\b2I know, I know. \w8I'm his messenger. \w8\w4\![anim,stop,41]\i[45]And that means I have to interpret every little thing he does when he decides he's too busy for me."
 			"%(next)"
 		}
 		{
-			"\1\b[10]Caretakers don't just decide to be busy. \w8Perhaps \w4it's because you're mad at him?\w4"
-			"\0\f[height,+2]Mad?!\f[height,default] \w8I'm not mad at him!\w8\w8\x"
+			"\s[25]%(aga.stern)\i[102]\i[81]\i[45]"
+			"\1\b[10]Caretakers don't just decide to be busy. \w8\0\s[25]%(aga.solemn)\i[102]\i[81]\i[45]\1Perhaps \w8it's because you're mad at him?\w4"
+			"\0\s[25]%(aga.neut)\i[101]\i[82]\i[55]"
+			"\f[height,+2]Mad?!\f[height,default] \w8I'm not mad at him!\w8\w8\x"
+			"\s[25]%(aga.stern)\i[101]\i[55]"
 			"\1\b[10]Starlight, don't yell. \w8People are watching.\w8\w4"
-			"\0O-Oh. \w8Right. \w8\w8Sorry."
+			"\0O-Oh. \w8\![anim,stop,55]\i[82]\i[47]Right. \w8\w8Sorry."
 			"%(next)"
 		}
 		{
-			"\0Really. \w8I'm not mad at Fenr. \w8I'm mad at _myself,_ \w2Agastache.\w8\w8"
+			"\0\s[25]%(aga.stern)\i[102]\i[82]\i[49]"
+			"Really. \w8I'm not mad at Fenr. \w8I'm mad at _myself,_ \w2Agastache.\w8\w8"
+			"\0\s[25]%(aga.solemn)\i[102]\i[82]\i[49]"
 			"\1\b[10]Oh?\w8\w8\0\x"
-			"\0\bLike... \w8I'm not trying hard enough to understand why these things are happening. \w8Like I'm not good enough. \w8Or something.\w8\w8"
+			"\0\s[25]%(aga.solemn)\i[102]\i[82]\i[47]"
+			"Like... \w8I'm not trying hard enough to understand why these things are happening. \w8Like I'm not good enough. \w8Or something.\w8\w8"
 			"\1\b[10]Oh, Celeste..."
 			"%(next)"
 		}
 		{
+			"\0\s[25]%(aga.solemnsmile)\i[102]\i[82]\i[47]"
 			"\1\b[10]You're our one and only messenger, starlight. \w8You know more than me and the rest of the Resonants combined."
 			"\0Mhmm. \w8How much more do I _really_ know?\w8\w8\x"
 			"\1\b[12]I couldn't possibly decipher Fenr's actions with as much insight as you, Celeste. \w8You have a truly unique bond, disregarding your responsibilities.\w8\w8"
@@ -221,44 +258,120 @@ OnStory.3 : all
 			"%(next)"
 		}
 		{
-			"\0Ah! \w8I know I'm being a downer right now, sorry!\w8\w8"
-			"\1\b[12]It's okay, remember? \w8We've done this a lot. \w8Resonants are _here_ to listen to people's worries. \w8In short, \w2I'm here to be complained to.\w8\w8\0\x"
-			"\0\b2Hehehehe-- \w8Yeah, I guess I just... \w8Lately, \w2I haven't felt like I've been \w6allowed \w2to.\w8\w8"
-			"\1\b[10]All of those responsibilities?\w8\w8"
-			"\0\nYeah."
+			"\0\s[24]%(aga.neut)\i[102]"
+			"Ah! \w8I know I'm being a downer right now, \w8\s[23]%(aga.neut)\i[101]\i[82]sorry!\w8\w8"
+			"\s[23]%(aga.solemnsmile)\i[101]\i[82]"
+			"\1\b[12]It's okay, \w4remember? \w8We've done this a lot.\n\w8Resonants are _here_ to listen to people's worries. \w8\0\s[23]%(aga.smile)\i[101]\i[82]\1In short, \w2I'm here to be complained to.\w8\w8\0\x"
+			"\0\s[23]%(aga.smile)\i[82]\i[51]"
+			"Hehehehe-- \w8Yeah, I guess I just... \w8\![anim,stop,51]\i[47]Lately, \w2I haven't felt like I've been \w6allowed \w2to.\w8\w8"
+			"\s[23]%(aga.solemnsmile)\i[82]\i[47]"
+			"\1\b[10]All of those responsibilities?\w8\w8\0\x"
+			"\0\s[24]%(aga.solemnsmile)\i[82]\i[47]Mmm."
 			"%(next)"
 		}
 		{
+			"\0\s[24]%(aga.smile)\i[82]\i[47]"
 			"\1\b[12]In the Sun's Light, \w8consider yourself free of those responsibilities. \w8You're a child of the Sun. \w8This is your resting place.\w8\w8"
 			"\0Mhmm.\w8\w8\x"
+			"\s[24]%(aga.base)\i[82]\i[47]"
 			"\1\b[12]Celeste. \w8Truly, you should be more confident. \w8You have a gift. \w8Fenr made _you_ special. \w8Nothing can take that away from you.\w8\w8"
-			"\0...\w8Yeah." //neutral --> smile
+			"\0...\w8\s[23]%(aga.base)\i[82]\i[47]Yeah." //neutral --> smile
 			"%(next)"
 		}
 		{
+			"\s[24]%(aga.base)"
 			"\1\b[10]Your devotions earlier were beautiful.\w8\w8"
-			"\0Oh! \w8Thank you!\w8\w8"
+			"\0Oh! \w8\i[90]Thank you!\w8\w8"
 			"\1\nOut of curiosity, \w2what was it that you mumbled afterwards?\w8\w8"
-			"\0\nAh. \w8Um."
+			"\0\s[23]%(aga.base)\i[91]\i[82]\i[47]"
+			"\nAh. \w8Um."
 			"%(next)"
 		}
 		{
-			"\0I mean, \w8Agastache, \w8\w4don't you think the Caretaker's virtues are kinda...\w8\w8"
-			"\1\b[10]...\w8\w8"
-			"\0\nYou look \w8disappointed. \w8\w4Are you disappointed in me?"
+			"\0\s[23]%(aga.neut)\i[101]\i[82]\i[48]"
+			"I mean, \w8Agastache, \w8\w4don't you think the Caretaker's virtues are kinda...\w8\w8"
+			"\1\b[10]...\w8\w8\0\x"
+			"\s[23]%(aga.neut)\i[101]\i[82]\i[42]\i[34]"
+			"You look \w8disappointed. \w8\w4Are \w8you disappointed?"
 			"%(next)"
 		}
 		{
+			"\0\s[23]%(aga.base)\i[101]\i[82]\i[42]\i[34]"
 			"\1\b[10]No. \w8You can confess anything to me, \w2Celeste.\w8\w8"
-			"\0... \w8It's not that I'm \w2doubting him \w2or anything. \w8It just seems pretty irresponsible to put us all on the Bramblebrush with a virute that can be twisted into whatever people want it to be. \w8Like \w4for violence, \w8or selfishness...\w8\w8\x"
-			"\0Strength, \w4I mean. \w8That can mean anything."
+			"\0\s[23]%(aga.base)\i[101]\i[82]\i[47]\i[34]"
+			"\b2... \w8It's not that I'm \w2doubting him \w2or anything. \w8\![anim,stop,47]\i[42]It just seems pretty irresponsible to put us all on the Bramblebrush with a virute that can be twisted into whatever people want it to be. \w8\s[23]%(aga.neut)\i[101]\i[82]\i[46]\i[34]Like \w4for violence, \w8or selfishness...\w8\w8\x"
+			"\0\![anim,stop,46]\i[42]Strength, \w4I mean. \w8That can mean anything."
 			"%(next)"
 		}
 		{
-			"\1\b[10]Celeste, it's your role to interpret what strength means for all of Fenr's devotants.\w8\w8"
-			"\0...Yeah. \w8I know.\w8\w8\x"
-			"\1\b[10]Then why are you so aimless? \w8There must be something.\w8\w8"
-			"\0That's what I'm asking you...!"
+			"\0\s[23]%(aga.close)\i[101]\i[82]\i[46]"
+			"\1\b[10]Celeste, it's your role to interpret what strength means for all of Fenr's followers.\w8\w8"
+			"\0...Yeah. \w8\![anim,stop,46]\i[47]I know. \w8And I know I can't convince everyone. \w2I'm fine with that.\w8\w8\x"
+			"\0\s[23]%(aga.neut)\i[101]\i[82]\i[47]"
+			"\1\b[10]You know? \w8Then why are you so aimless? \w8\w4\0\s[23]%(aga.solemn)\i[101]\i[82]\i[47]\1There must be a reason.\w8\w8"
+			"\0That-- \w8\![anim,stop,47]\i[50]\i[91]That's what I'm trying to figure out."
+			"%(next)"
+		}
+		{
+			"\s[23]%(aga.neut)\i[101]\i[91]\i[82]\i[50]"
+			"\1\b[12]Do you believe the same thing of Vala's virtue of knowledge? \w8That all the Caretakers were irresponsible to leave us with their virtues?\w8\w8"
+			"\0I... \w8\s[23]%(aga.solemn)\i[102]\i[82]\i[49]\i[34]Did I really say it was _irresponsible?_ \w8That sounds so harsh.\w8\w8\x"
+			"\1\b[10]Yes, \w4you did.\w8\w8\w8"
+			"\0\![anim,stop,49]\i[46]Oh."
+			"%(next)"
+		}
+		{
+			"\0\s[25]%(aga.neut)\i[102]\u[46]"
+			"\b2Then... \w8Actually. \w8\![anim,stop,46]\i[50]Yeah. \w8\![anim,stop,50]\i[43]That's exactly what I mean.\n\w8\w4"
+			"\s[25]%(aga.neut)\i[81]\i[43]It was _awfully_ irresponsible for them to be so vague about everything, when we're supposed to be their soldiers. \w8It's like sending someone to battle with no orders.\w8\w8\x"
+			"\0\s[23]%(aga.close)\i[101]\i[82]\i[49]Out of anyone, \w2I deserve to think this. \w8I've actually _seen_ the guy! \w4\![anim,stop,49]\i[55]And I know that he--\w2"
+			"\s[25]%(aga.stern)\i[101]\i[55]"
+			"\1\b[10]\f[italic,1]Celeste.\f[italic,0]"
+			"%(next)"
+
+		}
+		{
+			"\1\b[10]Do you hear yourself? \w8Sit down.\w8\w8"
+			"\0I... \w8Okay.\w8\w8\x"
+			"\1\b[12]Don't you understand? \w8As I was saying earlier, \w4the messages of the Caretakers are _complicated._ \w8Every single one of their messages has a meaning and greater purpose. \w8You need to be more _patient._\w8\w8"
+			"\0..."
+			"%(next)"
+		}
+		{
+			"\1\b[12]Starlight, \w4look... \w8These \w4doubts \w4are getting us nowhere. \w8We need to take a break. \w8\w4Perhaps \w4refocusing your Resonance \w4could help you clear your mind?\w8\w8"
+			"\0That... \w8That actually sounds \w6really nice right now. \w8Thank you."
+			"%(next)"
+		}
+		{
+			"\0.\w8.\w8.\w8\w8" //hand on resonance, glowing
+			"\1\b[10].\w8.\w8."
+			"%(next)"
+		}
+		{
+			"\0...\w6Ahhh. \w8That's nice. \w8My heart is warm.\w8\w8"
+			"\1\b[10]Much better now, yes?\w8\w8"
+			"\0\nYes. \w8Just a bit."
+			"%(next)"
+		}
+		{
+			"\1\b[10]How long will you be staying, Celeste?\w8\w8"
+			"\0...\w4Today? \w8This was supposed to be a short visit. \w8But \w2I do _not_ want to talk to Mrs. Velvet and the crew right now.\w8\w8\x"
+			"\1\b[12]Ahaha, I see. \w6I completely understand. \w8I shouldn't be one to advocate flaking your duties, \w2but I think you deserve a break, no?\w8\w8"
+			"\0...\w4Really? \w8I'll \w8take you up on that." //(transition to genuine smile)
+			"%(next)"
+		}
+		{
+			"\1\b[10]Truly... \w8The reason why you're aimless is most definitely because of all this doubt in your heart.\w8\w8"
+			"\0Huh?\w8\w8\x"
+			"\1\b[12]Yes. \w8You need to have stronger \_a[key]faith\_a in Fenr, \w2Celeste. \w8I know for a fact that it will lead you to the answers you need.\w8\w8"
+			"\0Faith..."
+			"%(next)"
+		}
+		{
+			"\0...\w8It's getting really stuffy in here.\w8\w8"
+			"\1\b[10]Ah, yes. \w8Lights get very hot this time of the day.\w8\w8"
+			"\0\nI'll... \w8I'll just step out for a moment, \w4okay?\w8\w8"
+			"\1\nOf course. \w8Take as long as you need, \w2starlight."
 			"%(next)"
 		}
 		{
@@ -275,12 +388,14 @@ OnStory.4 : all
 	switch currentstory[1]
 	{
 		{
-			"\0Oh... \w8Poor thing. \w8\w8It's drooping.\w8\w8\x"
-			"I think... \w8It needs water, \w8right?\w8\w8\x"
+			"\0\s[24]\i[180]\i[82]\i[41]\i[11]"
+			"Oh... \w8Poor thing. \w8\w8It's drooping.\w8\w8\x"
+			"\![anim,stop,41]\i[45]I think... \w8It needs water, \w8right?\w8\w8\x"
 			"%(next)"
 		}
 		{
 			"\0Um... \w8Okay, \w4it needs water, \w4but where do I...\w8"
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]Water, yes. \w8Sunflowers are greedy about that. \w8Otherwise, \w2though, \w4it's perfectly healthy.\w8\w8"
 			"\0\nHuh?\w8\w8\x"
 			"\1\b[6]This plot has mature sunflowers. \w8The weight of the seeds naturally make the flower droop.\w8\w8"
@@ -288,6 +403,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[8]It could certainly be _better._ \w8This is the display patch, and this variety should have a strong enough stem to handle the flower head. \w8The dry soil doesn't look good, either.\w8\w8\x"
 			"\1\b[8]You'd expect better out of this Light. \w4It's the biggest in the capitol? \w8Known for the _beautiful gardens?_ \w8What group of Resonants looked over this patch? \w8I'd like to have a word with them, they're being so careless.\w8\w8\x"
 			"\0Haha! Hey, if they heard you saying that, they'd be heartbroken!\w8\w8"
@@ -295,11 +411,13 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0Okay, okay... \w8I don't doubt that. \w8And I'm only saying that cause I know _you're_ the reason this place is so neat.\w8\w8"
 			"\1\b[6]..." //awwww he's blushing
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0Hi, Tahir.\w8\w8\w8"
 			"\1\b[6]...\w4Yes?\w8\w8\0\x"
 			"\0You're supposed to say hi back. \w8You totally just snuck up on me just now.\w8\w8\w4"
@@ -308,12 +426,14 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0So, \w8um, \w8what are we planning on doing about this? \w8The sunflowers.\w8\w8"
 			"\1\b[6]Ah. \w8First, I'd like to prop them up with something. \w8There should be stakes in the shed somewhere.\w8\w8\0\x"
 			"\0Okay! \w8Let's go together!"
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]Cel.\w8\w8"
 			"\0Yes?\w8\w8"
 			"\1\nIs there something on your mind?\w8\w8\w8"
@@ -323,6 +443,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]...I worded that horribly, \w8didn't I?\w8\w8"
 			"\0No! \w8Well. \w8Only a little bit. \w8\w4What do you mean \w2""people talk?""\w8\w8\x"
 			"\1\b[6]You're Fenara's media darling. \w8Of course people talk.\w8\w8"
@@ -330,16 +451,19 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
-			"\1\b[8]There's a rumor going around that Fenr isn't talking to you about the Resonance Accumulation incident. \w8I overheard some jerks in the Forces doubting you. \w8Of course I'd be worried.\w8\w8"
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
+			"\1\b[8]There's a rumor going around that Fenr isn't talking to you about the Resonance Accumulation incident from last week. \w8I overheard some jerks in the Forces doubting you. \w8Of course I would be worried.\w8\w8"
 			"\0W-What?"
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0\b2T-Tahir, no one was supposed to know about any of that. \w8I only told one person about this. \w8But, \w4um, \w6to be fair, \w8I was being kind of loud...\w8\w8\w8"
 			"\1\b[6]Cel, you've really got to be more careful..."
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]Ah, I found some stakes.\w8\w8"
 			"\0Is that enough?\w8\w8"
 			"\1\nYes. \w8About 25 or so, \w4to be safe.\w8\w8"
@@ -350,6 +474,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0Wow, \w2Tahir, \w2you're strong!\w8\w8"
 			"\1\b[6]O-Oh. \w8I suppose.\w8\w8\0\x"
 			"\0Has anyone told you that you blush super easily?\w8\w8"
@@ -357,19 +482,22 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[8]I apologize for bringing up the whole rumor thing. \w8I know this is your dream, \w8and you already know that there's some jerks out there who are going to twist your words. \w8I could beat them up for you?\w8\w8"
 			"\0PFFT-- \w8Tahir, no!"
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0Actually. \w8Yeah, go ahead!\w8\w8"
 			"\1\b[6]Of course.\w8\w8\0\x"
 			"\0\b2HAHAHA, okay, but really! \w8I'll be fine either way! \w8I just have to show everyone I've still got it in my next few public showings. \w8I'm looking forward to it.\w8\w8\w2"
 			"\1\b[6]I see. \w8I have no idea how you do all that... \w8The public speaking.\w8\w8\0\x"
-			"\0It's fun! \w8I get to be all peppy and showy, \w4and wear a pretty dress!"
+			"\0It's fun! \w8I get to be all cute and showy, \w4and wear a pretty dress!"
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]And... \w8It's all \w6_worth it,_ \w8right?\w8\w8"
 			"\0\b2Definitely! \w8Seeing everyone's happy, smiling faces... \w8A peaceful Fenara. \w8And a peaceful Valaria. \w8\w4That's my dream. \w8I know in my heart that it's worth it.\w8\w8\x"
 			"\1\b[6]That's a lot for one person.\w8\w8"
@@ -378,6 +506,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]Not \w4everyone's \w2going \w2to \w2help \w2you \w2too, \w8you know.\w8\w8"
 			"\0What?\w8\w8\x"
 			"\1\b[6]What I mean \w2is that \w4not everyone that claims to want to help you \w4has your best interests in mind. \w8Especially \w2not here.\w8\w8\w4"
@@ -387,6 +516,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0You won't \w8tell anyone what I'm about to say, \w8right?\w8\w8"
 			"\1\b[6]Are you sure?\w8\w8\0\x"
 			"\0Tahir. \w8I know you. \w8If I'm going to trust one person, it's going to be you. \w8I don't care.\w8\w8\w8"
@@ -394,6 +524,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\0Is this... \w8Is what I'm doing right now \w2what I really want?\w8\w8"
 			"\1\b[6]...\w8\w8\0\x"
 			"\0\b2I mean, \w8not helping the flowers with you. \w8This is one thing that I know for sure that I want. \w8I mean everything _else._ \w8The performances.\w8\w8"
@@ -402,6 +533,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]You feel like nothing you're doing is your own choice?\w8"
 			"\0N-No! \w6No, \w4not _everything._\w8\w8\x"
 			"\1\b[6]Yes, sure, \w8then at least _some_ things.\w8\w8"
@@ -410,6 +542,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[6]Cel, listen to me. \w4You're not being irrational. \w8You know how my superiors are using me, I've told you this, \w2right?\w8\w8"
 			"\0Y-Yeah?\w8\w8\x"
 			"\1\b[6]You're being \_a[key]used,\_a \w4too. \w8More than you think you're being used.\w8\w8\w8"
@@ -417,6 +550,7 @@ OnStory.4 : all
 			"%(next)"
 		}
 		{
+			"\0\s[24]\i[180]\i[41]\i[11]\i[2212]\i[2170]\i[2131]\i[2115]\i[2000]"
 			"\1\b[16]What do you two think you're doing?\w8\w8\x\e"
 		}
 		{
@@ -429,20 +563,85 @@ OnStory.5 : all
 {
 	//And then you took it from me. 
 	//(Umair lecturing Tahir and Cel. And then talking about Valarian rebels. Go kill them Cel!)
+	//relatively short chapter lol
+	//tahir stepping up for celeste, getting dragged away </3
+	//okay nevermind that's not what happens
 	
 	switch currentstory[1]
 	{
 		{
-			"\1"
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[18]Fenara and Valaria's longstanding tensions don't come from nowhere. \w8We were made to fight. \w8It's unrealistic to believe that we'll ever find peace with them.\w8\w8"
+			"\0...\w8\w8\x"
+			"\1\b[16]You understand, \w2don't you, \w2Tahir? \w8Tell her.\w8\x"
+			"\1\b[6]...\w8Celeste.\w8\w8\x\e"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[8]Fenara needs you, \w4now more than ever. \w8If their bringer of peace ignores a... \w8A \w4direct threat to that. \w8It's a betrayal to the nation.\w8\w8\x"
+			"\1\b[16]Perfectly said, Tahir.\w8\w8\x\e"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\0I... \w8But I've never dismantled a rebellion of this size before.\w8\w8"
+			"\1\b[16]You've dealt with large Resonance Zones, haven't you? \w8You're strong, \w6Celeste.\w8\w8\0\x"
+			"\0This is different! \w8Those were monsters! \w8This is _people!_\w8"
+			"\1\b[16]This is a _threat_ to _national security._ \w8I shouldn't have to go over this again, Celeste."
 			"%(next)"
 		}
 		{
-			"\0"
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[16]Come now, it's not like you're _killing_ anyone. \w8You've taken in criminals of all sorts.\w8\w8"
+			"\0--Okay, \w4if I'm taking this correctly... \w8You want me to lead something _that drastic_ \w8into a town \w4full of Fenara citizens?\w8\w8\x"
+			"\1\b[18]Briarstone doesn't _have_ any Fenara citizens anymore. \w8You saw the reports. \w8Anything short of firm action will get us killed.\w8\w8"
+			"\0..."
 			"%(next)"
 		}
 		{
-			"\1"
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[18]Goodness. \w8You're an adult, aren't you? \w8Stop whimpering. \w8I suspected that the Light's been coddling our public relations team, but I didn't know it was this _bad._\w8\x"
+			"\1\b[6]Do you have to speak to her like that?\w8\x"
+			"\1\b[16]Excuse me?\w8\w8\x\e"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[6]It's just like you said. \w8She's an adult. \w6So why are you babying her? \w8It doesn't do anything.\w8\w8\x"
+			"\1\b[16]Then she shouldn't be acting like a baby. \w8\w4Fenr, \w8Tahir, \w8be quiet for a moment.\w8\w8\x\e"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[18]I'll repeat your orders. \w8All you have to do is lead the charge. \w8The First Division will do the hard work, while you apprehend Zaan and the rest of her friends. \w8Understand?\w8\w8\w8"
+			"\0I \w8understand, \w8sir. \w8\w8\x" //look at tahir, then to the screen.
+			"\1\b[16]Do you?\w8\w8"
+			"\0.\w2.\w2."
 			"%(next)"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2172]\i[2135]\i[2115]\i[2000]\i[143]\i[103]\i[92]\i[81]\i[47]"
+			"\1\b[16]I don't have time for this, so let's wrap this up quickly. \w8Celeste, your weapon. \w8Do you understand the new upgrades?\w8\w8"
+			"\0Yes. \w8The rune matrix has five tiers. \w8I'm ready to learn \w2how to create \_a[key]the rune\_a with it.\w8\w8\x"
+			"\1\b[16]Perfect. \w8Tahir helped test this particular rune, you know. \w8A work of genius.\w8\w8"
+			"\0...\w4He \w4_did?_" //horrified
+			"%(next)"
+		}
+		{
+			"\0\s[22]\i[2210]\i[2182]\i[2171]\i[2146]\i[2120]\i[2000]\i[143]\i[103]\i[92]\i[56]\i[21]"
+			"\1\b[16]What's with that look on your face, \w4Tahir?\w8\w8\x"
+			"\1\b[6]I never... \w8You make it sound like I wanted to help you.\w8\w8\x"
+			"\1\b[18]What's this attitude all of a sudden? \w8Does it matter if you%(br)_wanted_ to help me? \w8The fact is that you _did,_ and you're letting it be used. \w8You're not any better than the rest of your division, so I don't see your point.\w8\w8\x"
+			"\1\b[16]It can't be because I'm bringing this up in front of your%(br)_dear friend,_ is it?\w8\w8\x"
+			"\1\b[6].\w2.\w2.\w8\x\e" //ANGRY HE IS ABOUT TO KILL HIM
+		}
+		{
+			"\0\s[22]\i[181]\i[92]\i[55]\i[21]"
+			"\1[YELLING AND SHATTERING]\w8"
+			"\0!!!\w8\w8\x" //horrified
+			"\1\b[16]You BRAT! \w8What do you think you're doing?!\w8\x"
+			"\1\b[6]Celeste, _run!_ \w8I'm fixing this!\w8\x"
+			"\1\b[16]\f[height,+2]GET BACK HERE!\f[height,default]\w8\w8\x"
+		}
+		{
+			"\![raise,OnDialogueVars,onend]\![raise,OnEnd]"
 		}
 	}
 }
@@ -450,21 +649,76 @@ OnStory.5 : all
 OnStory.6 : all
 {
 	//Peace is restored!  
-	//(Aftermath of topsoil (oh god theres so much i could do here...))
+	//(Aftermath of briarstone (oh god theres so much i could do here...))
+	//first part is the announcement, then she goes to the afterparty...
 	
 	switch currentstory[1]
 	{
 		{
-			"\1"
+			"\1[CHEERING AND APPLAUSE]\w8\w8"
+			"\0Thank you, thank you all! \w8Yes, today is a momentous occasion! \w8Because today...\w8\w8\x"
+			"\0The source of the discord ravaging Fenara has been vanquished for good!\w8\w8"
+			"\1[TRUMPET MELODY]"
 			"%(next)"
 		}
 		{
-			"\0"
+			"\0\b2A sincere thank you to all the brave soldiers who volunteered for their local Force! \w8Our defusing of Briarstone couldn't have been as smooth as it was without your help!\w8\w8\x"
+			"\0\b2We have safely captured the leaders of the rebellion that took over Briarstone! \w8Zaan \w2is here to atone for her crimes against Fenara!\w8\w8\x"
+			"\0\b2For charges of inciting insurrection against the Fenara government... \w8She and her cohorts have been sentenced for life."
 			"%(next)"
 		}
 		{
-			"\1"
+			"\0\b2All day today in the city, we'll be hosting various events! \w8Please check in with your nearest organizer for fliers if you haven't recieved them already!\w8\w8\x"
+			"\0\b2Hehe~ \w8That's all from me today! \w8I'll be seeing you all in my next performance! \w8Now, I've got some festivities to be getting to!\w8\w8"
+			"\1[CHEERING]"
 			"%(next)"
+		}
+		{
+			"\1\f[height,-2]You don't even fight what they tell you to say? \w8You make me sick.\f[height,default]\w8\w8"
+			"\0...\w8\w8\x"
+			"\1We'll take it from here, Miss Celeste. \w8Your crew is waiting for you.\w8\w8"
+			"\0..."
+			"%(next)"
+		}
+		{
+			"\1Miss Celeste! \w8Short and simple! \w8Very nice!\w8\w8\x"
+			"\1Shush, she needs to get changed! \w8You're going to be late, miss!\w8\w8\x\e"
+		}
+		{
+			"\1[RUSTLING]\w8\w8\x\e"
+		}
+		{
+			"\1Ah, the star of the show! \w8You've made it!\w8\w2\c"
+			"\1Miss Celeste!\w8\w4\c"
+			"\1\b[16]There you are.\w8\w8\w4"
+			"\0Sir."
+			"%(next)"
+		}
+		{
+			"\0Uh, where's my manager? \w8She said she'd be here.\w8\w8"
+			"\1\b[16]Velvet? \w8She's running a tad late is all. \w8You know how she's a stickler for details.\w8\w8"
+			"\0\nAh. \w8Makes sense."
+			"%(next)"
+		}
+		{
+			"\1Refreshments, Miss Celeste? \w8Poprose rhubarb cocktail, just as you like it.\w8\w8"
+			"\0Oh. \w8Yes. \w8Thank you."
+			"%(next)"
+		}
+		{
+			"\1\b[16]There were a few \w2_unpleasant bumps_ \w4in this whole operation... \w8But \w4you've exceeded our expectations, Celeste.\w8\n\f[height,-2]Even without \w2the rune.\f[height,default]\w8\w8"
+			"\0...\w8\w8\x"
+			"\1Ah, yes! \w8Working with you was such an honor, Miss Celeste! "
+			"%(next)"
+		}
+		{
+			""
+		}
+		{
+			"\0Hahahahahaha! Hahaha! Oh, you're all so FUNNY! \w8Why the fuck would anyone say that? \w4You're all \_a[key]sick!\_a"
+		}
+		{
+			"\![raise,OnDialogueVars,onend]\![raise,OnEnd]"
 		}
 	}
 }
@@ -473,6 +727,39 @@ OnStory.7 : all
 {
 	//Tell me what to do! 
 	//(Celeste totally breaking down at the suns light and rambling at fenr 😭)
+	//unlike the rest of the chapters, this one takes place immediately after the last one. usually, every single chapter has a noticeable amount of time between them. i hope that's obvious to the user.
+	//she's still in her party dress. she's splashed wine onto the stained glass and camera. she's a mess. she grabs the camera and pleads to it.
+	
+	switch currentstory[1]
+	{
+		{
+			"\0...\w8\w8" //hand over mouth
+			"\1...Goodness, \w8Celeste, \w8you've never said\c"
+			"\0Excuse me for a moment." //very obviously fake smile
+			"%(next)"
+		}
+		{
+			"\1[SLAM]\w8\w8"
+			"\0Haa... Haahahaha... \w8I need... \w8I need to go see Fenr."
+			"%(next)"
+		}
+		{
+			"\1[CLICK] [CLICK] [CLICK]" //shot of her shoes, two frame running anim
+			"%(next)"
+		}
+		{
+			"\1[ECHOING SLAM]\w8\w8"
+			"\0"
+		}
+	}
+}
+
+OnStory.8 : all
+{
+	//But in the end, it's still you. 
+	//(everything returning to the status quo. celeste's relationships and conversations with the public relations staff, stage crew, and her manager. daily life.)
+	//tahir is gone. she cant find him anywhere. 
+	//these events take place before the events of the game. so its setting up fenara's military might, and how they can completely destroy resistance movements and recreate the status quo. yup. uhhuh. im. good at writing /j 
 	
 	switch currentstory[1]
 	{
@@ -491,25 +778,26 @@ OnStory.7 : all
 	}
 }
 
-OnStory.8 : all
+OnEpilogue.Temp : all
 {
-	//But in the end, it's still you. 
-	//(Tahir leaving AUGHEG and then everything returning to the status quo KMS)
-	
 	switch currentstory[1]
 	{
 		{
-			"\1"
-			"%(next)"
+			"\s[9]"
+			"\1Hello! \w8This is Phantasia here! \w8You've reached the end of Celeste's demo!\w8\w8\x"
+			"\1\b2Ehehehe... \w8I vastly overestimated how much I could get done in three days, so the last three chapters aren't done yet! \w8Also like. \w8All the chapters have incomplete surfaces LOL.\w8\w8\x"
+			"\1Thank you for reading this far, though :D\w8\w8\x"
+			"\1\b2I'll spend the week after jam finishing and polishing the story, as well as rendering and drawing new surfaces! \w8i really want to make a full version so look out for that pleaasee :3\w8\x\e"
 		}
 		{
-			"\0"
-			"%(next)"
+			"\s[9]"
+			"\1There's no other dialogue here for you..... Oooh... Spooky.....\w8\w8\x"
+			"\1Do report any bugs to me, though! \w8I haven't thoroughly playtested this one LOL.\w8\w8\x\e"
 		}
 		{
-			"\1"
-			"%(next)"
+			"\![raise,OnDialogueVars,onend]\![raise,OnEnd]"
 		}
+
 	}
 }
 
@@ -522,8 +810,7 @@ OnEnd
 	_prev = currentstory[0] - 1
 
 	//set completed chapters.
-	if storestory[1] == currentstory[0] && storestory[1] < _next
-	{storestory[1]++}
+	AddFlag("DoneCh%(_next)")
 
 	//the way i cancel out onaitalk's currentstory[1]++ is really roundabout. (uses ontranslate + ondialoguevars)
 	//ideally, i'd make it stop if currentstory[1] were at a certain value per chapter, but honestly. that sounds like a lot of work. no thanks
@@ -548,8 +835,8 @@ OnEnd
 		}
 		//3
 		{
-			"He was well meaning. \w8But he never really understood her."
-			"Something about Agastache's voice was grating to you."
+			"The echo of their conversation still lingers in your mind."
+			"The echoing silence of the Light leaves the room feeling empty."
 		}
 		//4
 		{
@@ -557,32 +844,33 @@ OnEnd
 		}
 		//5
 		{
-			"It all seemed so hopeless."
+			"The recording abruptly ends there."
+			"The memory still makes you sick."
 		}
 		//6
 		{
-			"You don't think you can see her like this again."
+			//"You don't think you can see her like this again."
 		}
 		//7
 		{
-			"Did she... \w8Did she record this herself?"
+			//"Did she... \w8Did she record this herself?"
 		}
 		//8
 		{
-			"That's it, \w8then."
+			//"That's it, \w8then."
 		}
 	}
 	--
 	"\w8\w8\n\n"
 	--
-	if storestory[0] > currentstory[0]
+	if unlockstory > currentstory[0]
 	{"\![*]\q[Next Recording,OnChapterChange,next]\n"}
 	else
 	{"\![*]((Next Recording))\n"}
 	--
 	"\![*]\q[Select Recordings,OnChapterMenu]\n"
 	--
-	if _prev > 0
+	if _prev >= 0
 	{"\![*]\q[Previous Recording,OnChapterChange,back]\n"}
 	else
 	{"\![*]((Previous Recording))\n"}

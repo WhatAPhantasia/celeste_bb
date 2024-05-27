@@ -4,16 +4,1249 @@ descript
 }
 //animation#.pattern#,method,surface,pause,X,Y
 
-//—————————————————————————————— Sakura surfaces ——————————————————————————————
+//-------- number planning 4 images
+//1-99: reserved for surfaces
+//100-1999: celeste
+//	100-199: head stuff for base
+//		100-109: base + back hair
+//		110-129: mouth
+//		130-169: eyes
+//		170-179: eyebrows
+//		180-199: extras
+//	200-299: idol body for base
+//		200-209: base
+//		210-249: left arms
+//		250-289: right arm
+//		290-299: extras
+//	300-399: casual body for base
+//		300-309: base
+//		310-349: left arms
+//		350-389: right arm
+//		390-399: extras
+//	400-499: party body for base
+//		400-409: base
+//		410-449: left arms
+//		450-489: right arm
+//		490-499: extras
+//	500-599: turned around
+//		500-509: base body
+//		510-529: head
+//		530-559: left arm
+//		560-589: right arm
+//		590-599: extras
+//	everything else is unique poses (ill figure it out
+//2000-2999: npcs
+//	2000-2499: tahir
+//		000-099: base
+//		100-199: head
+//		200-299: no coat body for base
+//		300-399: coat body on top of base
+//		400+: unique surfaces
+//	2500-2599: agastache
+//		500-509: base
+//		510-529: mouths
+//		530-549: eyes
+//		550-569: eyebrows
+//		570-599: extras
+//	and then idk anything else (ill figure it out x2
+//3000-3499: foreground elements
+//3500-3599: background elements
+//4000+: screen stuff
+//5000+: misc animations
+//90000+: custom surfaces made in surfaces.txt by layerin em on top of eachother using elements :3
+//--- SURFACES PLANNING
+//oh my god how am i doing this.
+//i will be doing this entire thing through animations. i dont care. im doing things in the most inconvenient way possible
+//each surface is only different depending on which character is talking.
+//character positions in the way that i want it to be isnt possible with intervals, at least not in an easy way. so i'm creating separate surfaces for all of that.
+//0: idol celeste smile talk
+//1: idol celeste neutral talk
+//2: idol celeste sad talk
+//3: casual celeste smile talk
+//4: casual celeste neutral talk
+//5: casual celeste sad talk
+//6: party celeste smile talk
+//7: party celeste neutral talk
+//8: party celeste sad talk
+//9: blank screen
+//	0-9: background elements
+//	10-19: base clothes
+//11: celeste turned around + turned around, shocked
+//12: celeste pointing splash
+//13: celeste battle (VS SUNSPRITE)
+//14: happy tahir nocoat talk, celeste casual right
+//15: happy tahir coat talk, celeste idol right
+//16: neutral tahir nocoat talk, celeste casual right
+//17: neutral tahir coat talk, celeste idol right
+//18: sad tahir nocoat talk, celeste casual right
+//19: sad tahir coat talk, celeste idol right
+//20: idol celeste right smile talk, other chara on left
+//21: idol celeste right neutral talk, other chara on left
+//22: idol celeste right sad talk, other chara on left
+//23: casual celeste right smile talk, other chara on left
+//24: casual celeste right neutral talk, other chara on left
+//25: casual celeste right sad talk, other chara on left
 
+//—————————————————————————————— surfaces ——————————————————————————————
+
+//0: idol celeste smile talk
 surface0
 {
-	element0,overlay,surface0.png,0,0
+	element0,overlay,surface3000.png,0,0
 }
 
-//—————————————————————————————— Kero surfaces ——————————————————————————————
+//1: idol celeste neutral talk
+surface1
+{
+	element0,overlay,surface3000.png,0,0
+}
 
+//2: idol celeste sad talk
+surface2
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+
+// base idol append
+surface.append0-2
+{
+	//--hair
+	//pigtails
+	animation10.interval,runonce
+	animation10.pattern0,overlay,101,0,0,0
+
+	//down
+	animation11.interval,never
+	animation11.pattern0,stop,10
+	animation11.pattern1,overlay,104,0,0,0
+
+	//--base clothes
+	//idol
+	animation15.interval,runonce
+	animation15.pattern0,overlay,200,0,0,0
+
+	//--head
+	animation19.interval,runonce
+	animation19.pattern0,overlay,100,0,0,0
+
+	//--mouth is in its own append.
+
+	//--left arm!
+	//mic
+	animation100.interval,runonce
+	animation100.pattern0,overlay,210,0,0,0
+
+	//on heart
+	animation101.interval,never
+	animation101.pattern0,parallelstop,(100,140)
+	animation101.pattern1,overlay,211,0,0,0
+
+	//out
+	animation102.interval,never
+	animation102.pattern0,parallelstop,(100,140)
+	animation102.pattern1,overlay,212,0,0,0
+
+	//down
+	animation103.interval,never
+	animation103.pattern0,parallelstop,(100,140)
+	animation103.pattern1,overlay,213,0,0,0
+
+	//hip
+	animation104.interval,never
+	animation104.pattern0,parallelstop,(100,140)
+	animation104.pattern1,overlay,214,0,0,0
+	
+	//--right arm!
+	//mic pole
+	animation140.interval,never
+	animation140.pattern0,stop,144
+	animation140.pattern1,overlay,290,0,0,0
+
+	//on heart
+	animation141.interval,never
+	animation141.pattern0,stop,144
+	animation141.pattern1,overlay,251,0,0,0
+
+	//out
+	animation142.interval,never
+	animation142.pattern0,stop,144
+	animation142.pattern1,overlay,252,0,0,0
+
+	//down
+	animation143.interval,never
+	animation143.pattern0,stop,144
+	animation143.pattern1,overlay,253,0,0,0
+
+	//hip
+	animation144.interval,runonce
+	animation144.pattern0,overlay,254,0,0,0
+
+	//hand over mic
+	animation149.interval,never
+	animation149.pattern0,stop,144
+	animation149.pattern1,overlay,250,0,0,0
+
+	//--both arms
+	//weapon 1
+	animation180.interval,never
+	animation180.pattern0,parallelstop,(100,144)
+	animation180.pattern1,overlay,249,0,0,0
+
+	//hand over mouth
+	animation181.interval,never
+	animation181.pattern0,parallelstop,(100,144)
+	animation181.pattern1,overlay,289,0,0,0
+}
+
+
+//3: casual celeste smile talk
+surface3
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//4: casual celeste neutral talk
+surface4
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//5: casual celeste sad talk
+surface5
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+
+// base casual append
+surface.append3-5
+{
+	//--hair
+	//pigtails
+	animation10.interval,runonce
+	animation10.pattern0,overlay,102,0,0,0
+
+	//down
+	animation11.interval,never
+	animation11.pattern0,stop,10
+	animation11.pattern1,overlay,105,0,0,0
+
+	//--base clothes
+	//idol
+	animation15.interval,runonce
+	animation15.pattern0,overlay,300,0,0,0
+
+	//--head
+	animation19.interval,runonce
+	animation19.pattern0,overlay,100,0,0,0
+
+	//--mouth is in its own append.
+
+	//--left arm!
+	//hip
+	animation100.interval,runonce
+	animation100.pattern0,overlay,310,0,0,0
+
+	//on heart
+	animation101.interval,never
+	animation101.pattern0,stop,100
+	animation101.pattern1,overlay,311,0,0,0
+
+	//down
+	animation102.interval,never
+	animation102.pattern0,stop,100
+	animation102.pattern1,overlay,312,0,0,0
+	
+	//--right arm!
+	//hip
+	animation140.interval,never
+	animation140.pattern0,stop,142
+	animation140.pattern1,overlay,350,0,0,0
+
+	//on heart
+	animation141.interval,never
+	animation141.pattern0,stop,142
+	animation141.pattern1,overlay,351,0,0,0
+
+	//down
+	animation142.interval,runonce
+	animation142.pattern0,overlay,352,0,0,0
+
+	//--both arms
+	//sunflower
+	animation180.interval,never
+	animation180.pattern0,parallelstop,(100,140)
+	animation180.pattern1,overlay,389,0,0,0
+}
+
+
+//6: party celeste smile talk
+surface6
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//7: party celeste neutral talk
+surface7
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//8: party celeste sad talk
+surface8
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+surface9
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//base smile talk
+surface.append0,3,6
+{
+	//--yeah
+	//smile
+	animation20.interval,runonce
+	animation20.pattern0,overlay,110,0,0,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,111,0,0,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,112,0,0,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,0,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,0,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,38,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,0,0
+	animation37.pattern2,overlay,112,0,0,0
+	animation37.pattern3,overlay,-1,150,0,0,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,0,0
+	animation38.pattern2,overlay,118,0,0,0
+	animation38.pattern3,overlay,-1,150,0,0,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,0,0
+	animation39.pattern2,overlay,111,0,0,0
+	animation39.pattern3,overlay,-1,150,0,0,0
+	animation39.pattern4,start,20
+	
+}
+
+//base neutral talk
+surface.append1,4,7
+{
+	//--yeah
+	//eh
+	animation20.interval,runonce
+	animation20.pattern0,overlay,115,0,0,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,116,0,0,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,117,0,0,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,0,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,0,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,38,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,0,0
+	animation37.pattern2,overlay,117,0,0,0
+	animation37.pattern3,overlay,-1,150,0,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,0,0
+	animation38.pattern2,overlay,118,0,0,0
+	animation38.pattern3,overlay,-1,150,0,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,0,0
+	animation39.pattern2,overlay,116,0,0,0
+	animation39.pattern3,overlay,-1,150,0,0
+	animation39.pattern4,start,20
+	
+}
+
+//base sad talk
+surface.append2,5,8
+{
+	//--yeah
+	//a heem heem
+	animation20.interval,runonce
+	animation20.pattern0,overlay,120,0,0,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,121,0,0,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,122,0,0,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,0,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,0,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,0,0
+	animation37.pattern2,overlay,122,0,0,0
+	animation37.pattern3,overlay,-1,150,0,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,0,0
+	animation38.pattern2,overlay,118,0,0,0
+	animation38.pattern3,overlay,-1,150,0,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,0,0
+	animation39.pattern2,overlay,121,0,0,0
+	animation39.pattern3,overlay,-1,150,0,0
+	animation39.pattern4,start,20
+	
+}
+
+//append all bases (eyes)
+surface.append0-8
+{
+	//--eyes
+	//open
+	animation40.interval,runonce
+	animation40.pattern0,overlay,130,0,0,0
+	//lid
+	animation41.interval,never
+	animation41.pattern0,parallelstop,(40,79)
+	animation41.pattern1,overlay,131,0,0,0
+	//open no shine
+	animation42.interval,never
+	animation42.pattern0,parallelstop,(40,79)
+	animation42.pattern1,overlay,132,0,0,0
+	//lid no shine
+	animation43.interval,never
+	animation43.pattern0,parallelstop,(40,79)
+	animation43.pattern1,overlay,133,0,0,0
+	//look
+	animation44.interval,never
+	animation44.pattern0,parallelstop,(40,79)
+	animation44.pattern1,overlay,134,0,0,0
+	//look lid
+	animation45.interval,never
+	animation45.pattern0,parallelstop,(40,79)
+	animation45.pattern1,overlay,135,0,0,0
+	//look no shine
+	animation46.interval,never
+	animation46.pattern0,parallelstop,(40,79)
+	animation46.pattern1,overlay,136,0,0,0
+	//look lid no shine
+	animation47.interval,never
+	animation47.pattern0,parallelstop,(40,79)
+	animation47.pattern1,overlay,137,0,0,0
+	//look left
+	animation48.interval,never
+	animation48.pattern0,parallelstop,(40,79)
+	animation48.pattern1,overlay,138,0,0,0
+	//look left no shine
+	animation49.interval,never
+	animation49.pattern0,parallelstop,(40,79)
+	animation49.pattern1,overlay,139,0,0,0
+	//u_u
+	animation50.interval,never
+	animation50.pattern0,parallelstop,(40,79)
+	animation50.pattern1,overlay,140,0,0,0
+	//^_^
+	animation51.interval,never
+	animation51.pattern0,parallelstop,(40,79)
+	animation51.pattern1,overlay,141,0,0,0
+	//dilate
+	animation55.interval,never
+	animation55.pattern0,parallelstop,(40,79)
+	animation55.pattern1,overlay,145,0,0,0
+	//dilate left
+	animation56.interval,never
+	animation56.pattern0,parallelstop,(40,79)
+	animation56.pattern1,overlay,146,0,0,0
+
+	//blink
+	animation79.interval,random,5
+	animation79.pattern0,stop,40
+	animation79.pattern1,overlay,131,0,0,0
+	animation79.pattern2,overlay,-1,70,0,0
+	animation79.pattern3,overlay,140,0,0,0
+	animation79.pattern4,overlay,-1,50,0,0
+	animation79.pattern5,overlay,131,0,0,0
+	animation79.pattern6,overlay,-1,50,0,0
+	animation79.pattern7,start,40
+
+	//--eyebrows
+	//neutral
+	animation80.interval,runonce
+	animation80.pattern0,overlay,170,0,0,0
+
+	//angry
+	animation81.interval,never
+	animation81.pattern0,stop,80
+	animation81.pattern1,overlay,171,0,0,0
+
+	//sad
+	animation82.interval,never
+	animation82.pattern0,stop,80
+	animation82.pattern1,overlay,172,0,0,0
+
+	//--extras
+	//blush
+	animation90.interval,never 
+	animation90.pattern0,overlay,180,0,0
+	
+	//sweat
+	animation91.interval,never 
+	animation91.pattern0,overlay,181,0,0
+	
+	//trauma
+	animation92.interval,never 
+	animation92.pattern0,overlay,182,0,0
+}
+
+//--- ignore this
 surface10
 {
 	element0,overlay,surface10.png,0,0
+}
+//--- ignore this
+
+//11: celeste turned around + turned around, shocked
+surface11
+{
+	element0,overlay,surface3000.png,0,0
+	//does not exist currently
+}
+
+//12: celeste pointing splash
+surface12
+{
+	element0,overlay,surface3000.png,0,0
+	element1,overlay,surface611.png,0,0
+}
+
+//13: celeste battle (VS SUNSPRITE)
+surface13
+{
+	element0,overlay,surface3000.png,0,0
+	element1,overlay,surface610.png,0,0
+}
+
+//...
+//im not touching this shit right now LOL this needs to be FINISHED NOW
+
+//16: neutral tahir nocoat talk, celeste right
+surface16
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//17: neutral tahir coat talk, celeste right
+surface17
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//..
+
+//20: idol celeste right smile talk, other chara on left
+surface20
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//21: idol celeste right neutral talk, other chara on left
+surface21
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//22: idol celeste right sad talk, other chara on left
+surface22
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+
+// right idol append
+surface.append20-22,17
+{
+	//--hair
+	//pigtails
+	animation10.interval,runonce
+	animation10.pattern0,overlay,101,0,125,0
+
+	//down
+	animation11.interval,never
+	animation11.pattern0,stop,10
+	animation11.pattern1,overlay,104,0,125,0
+
+	//--base clothes
+	//idol
+	animation15.interval,runonce
+	animation15.pattern0,overlay,200,0,125,0
+
+	//--head
+	animation19.interval,runonce
+	animation19.pattern0,overlay,100,0,125,0
+
+	//--mouth is in its own append.
+
+	//--left arm!
+	//mic
+	animation100.interval,runonce
+	animation100.pattern0,overlay,210,0,125,0
+
+	//on heart
+	animation101.interval,never
+	animation101.pattern0,parallelstop,(100,140)
+	animation101.pattern1,overlay,211,0,125,0
+
+	//out
+	animation102.interval,never
+	animation102.pattern0,parallelstop,(100,140)
+	animation102.pattern1,overlay,212,0,125,0
+
+	//down
+	animation103.interval,never
+	animation103.pattern0,parallelstop,(100,140)
+	animation103.pattern1,overlay,213,0,125,0
+
+	//hip
+	animation104.interval,never
+	animation104.pattern0,parallelstop,(100,140)
+	animation104.pattern1,overlay,214,0,125,0
+	
+	
+	//--right arm!
+	//mic pole
+	animation140.interval,never
+	animation140.pattern0,stop,144
+	animation140.pattern1,overlay,290,0,125,0
+
+	//on heart
+	animation141.interval,never
+	animation141.pattern0,stop,144
+	animation141.pattern1,overlay,251,0,125,0
+
+	//out
+	animation142.interval,never
+	animation142.pattern0,stop,144
+	animation142.pattern1,overlay,252,0,125,0
+
+	//down
+	animation143.interval,never
+	animation143.pattern0,stop,144
+	animation143.pattern1,overlay,253,0,125,0
+
+	//hip
+	animation144.interval,runonce
+	animation144.pattern0,overlay,254,0,125,0
+
+	//hand over mic
+	animation149.interval,never
+	animation149.pattern0,stop,144
+	animation149.pattern0,overlay,250,0,125,0
+
+	//--both arms
+	//weapon 1
+	animation180.interval,never
+	animation180.pattern0,parallelstop,(100,144)
+	animation180.pattern1,overlay,249,0,125,0
+
+	//hand over mouth
+	animation181.interval,never
+	animation181.pattern0,parallelstop,(100,144)
+	animation181.pattern1,overlay,289,0,125,0
+}
+
+//23: casual celeste right smile talk, other chara on left
+surface23
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+
+//24: casual celeste right neutral talk, other chara on left
+surface24
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//25: casual celeste right sad talk, other chara on left
+surface25
+{
+	element0,overlay,surface3000.png,0,0
+}
+
+//right smile talk
+surface.append20,23,26
+{
+	//--yeah
+	//:)
+	animation20.interval,runonce
+	animation20.pattern0,overlay,110,0,125,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,111,0,125,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,112,0,125,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,125,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,125,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,38,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,125,0
+	animation37.pattern2,overlay,112,0,125,0
+	animation37.pattern3,overlay,-1,150,125,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,125,0
+	animation38.pattern2,overlay,118,0,125,0
+	animation38.pattern3,overlay,-1,150,125,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,125,0
+	animation39.pattern2,overlay,111,0,125,0
+	animation39.pattern3,overlay,-1,150,125,0
+	animation39.pattern4,start,20
+	
+}
+
+//right neutral talk
+surface.append21,24,27
+{
+	//--yeah
+	//:<
+	animation20.interval,runonce
+	animation20.pattern0,overlay,115,0,125,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,116,0,125,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,117,0,125,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,125,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,125,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,38,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,125,0
+	animation37.pattern2,overlay,117,0,125,0
+	animation37.pattern3,overlay,-1,150,125,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,125,0
+	animation38.pattern2,overlay,118,0,125,0
+	animation38.pattern3,overlay,-1,150,125,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,125,0
+	animation39.pattern2,overlay,116,0,125,0
+	animation39.pattern3,overlay,-1,150,125,0
+	animation39.pattern4,start,20
+	
+}
+
+//right sad talk
+surface.append22,25,28
+{
+	//--yeah
+	//a heem heem
+	animation20.interval,runonce
+	animation20.pattern0,overlay,120,0,125,0
+
+	//open 1
+	animation21.interval,never
+	animation21.pattern0,parallelstop,(20,36)
+	animation21.pattern1,overlay,121,0,125,0
+	
+	//open 2
+	animation22.interval,never
+	animation22.pattern0,parallelstop,(20,36)
+	animation22.pattern1,overlay,122,0,125,0
+
+	//no idles for other mouth types bc those are in other places
+
+	//small e
+	animation34.interval,never
+	animation34.pattern0,parallelstop,(20,36)
+	animation34.pattern1,overlay,118,0,125,0
+
+	//grin
+	animation35.interval,never
+	animation35.pattern0,parallelstop,(20,36)
+	animation35.pattern1,overlay,119,0,125,0
+
+	//talk anim
+	animation36.interval,talk,4
+	animation36.pattern0,alternativestart,(37,39)
+
+	animation37.interval,never
+	animation37.pattern0,stop,20
+	animation37.pattern1,overlay,-1,0,125,0
+	animation37.pattern2,overlay,122,0,125,0
+	animation37.pattern3,overlay,-1,150,125,0
+	animation37.pattern4,start,20
+
+	animation38.interval,never
+	animation38.pattern0,stop,20
+	animation38.pattern1,overlay,-1,0,125,0
+	animation38.pattern2,overlay,118,0,125,0
+	animation38.pattern3,overlay,-1,150,125,0
+	animation38.pattern4,start,20
+
+	animation39.interval,never
+	animation39.pattern0,stop,20
+	animation39.pattern1,overlay,-1,0,125,0
+	animation39.pattern2,overlay,121,0,125,0
+	animation39.pattern3,overlay,-1,150,125,0
+	animation39.pattern4,start,20
+	
+}
+
+// right casual append
+surface.append23-25,16
+{
+	//--hair
+	//pigtails
+	animation10.interval,runonce
+	animation10.pattern0,overlay,102,0,125,0
+
+	//down
+	animation11.interval,never
+	animation11.pattern0,stop,10
+	animation11.pattern1,overlay,105,0,125,0
+
+	//--base clothes
+	//idol
+	animation15.interval,runonce
+	animation15.pattern0,overlay,300,0,125,0
+
+	//--head
+	animation19.interval,runonce
+	animation19.pattern0,overlay,100,0,125,0
+
+	//--mouth is in its own append.
+
+	//--left arm!
+	//hip
+	animation100.interval,runonce
+	animation100.pattern0,overlay,310,0,125,0
+
+	//on heart
+	animation101.interval,never
+	animation101.pattern0,stop,100
+	animation101.pattern1,overlay,311,0,125,0
+
+	//down
+	animation102.interval,never
+	animation102.pattern0,stop,100
+	animation102.pattern1,overlay,312,0,125,0
+	
+	//--right arm!
+	//hip
+	animation140.interval,never
+	animation140.pattern0,stop,142
+	animation140.pattern1,overlay,350,0,125,0
+
+	//on heart
+	animation141.interval,never
+	animation141.pattern0,stop,142
+	animation141.pattern1,overlay,351,0,125,0
+
+	//down
+	animation142.interval,runonce
+	animation142.pattern0,overlay,352,0,125,0
+
+	//--both arms
+	//sunflower
+	animation180.interval,never
+	animation180.pattern0,parallelstop,(100,142)
+	animation180.pattern1,overlay,389,0,125,0
+}
+
+//append all right celestes (eyes)
+surface.append20-28
+{
+	//--eyes
+	//open
+	animation40.interval,runonce
+	animation40.pattern0,overlay,130,0,125,0
+	//lid
+	animation41.interval,never
+	animation41.pattern0,parallelstop,(40,79)
+	animation41.pattern1,overlay,131,0,125,0
+	//open no shine
+	animation42.interval,never
+	animation42.pattern0,parallelstop,(40,79)
+	animation42.pattern1,overlay,132,0,125,0
+	//lid no shine
+	animation43.interval,never
+	animation43.pattern0,parallelstop,(40,79)
+	animation43.pattern1,overlay,133,0,125,0
+	//look
+	animation44.interval,never
+	animation44.pattern0,parallelstop,(40,79)
+	animation44.pattern1,overlay,134,0,125,0
+	//look lid
+	animation45.interval,never
+	animation45.pattern0,parallelstop,(40,79)
+	animation45.pattern1,overlay,135,0,125,0
+	//look no shine
+	animation46.interval,never
+	animation46.pattern0,parallelstop,(40,79)
+	animation46.pattern1,overlay,136,0,125,0
+	//look lid no shine
+	animation47.interval,never
+	animation47.pattern0,parallelstop,(40,79)
+	animation47.pattern1,overlay,137,0,125,0
+	//look left
+	animation48.interval,never
+	animation48.pattern0,parallelstop,(40,79)
+	animation48.pattern1,overlay,138,0,125,0
+	//look left no shine
+	animation49.interval,never
+	animation49.pattern0,parallelstop,(40,79)
+	animation49.pattern1,overlay,139,0,125,0
+	//u_u
+	animation50.interval,never
+	animation50.pattern0,parallelstop,(40,79)
+	animation50.pattern1,overlay,140,0,125,0
+	//^_^
+	animation51.interval,never
+	animation51.pattern0,parallelstop,(40,79)
+	animation51.pattern1,overlay,141,0,125,0
+	//dilate
+	animation55.interval,never
+	animation55.pattern0,parallelstop,(40,79)
+	animation55.pattern1,overlay,145,0,125,0
+	//dilate left
+	animation56.interval,never
+	animation56.pattern0,parallelstop,(40,79)
+	animation56.pattern1,overlay,146,0,125,0
+
+	//blink
+	animation79.interval,random,5
+	animation79.pattern0,stop,40
+	animation79.pattern1,overlay,131,0,125,0
+	animation79.pattern2,overlay,-1,70,125,0
+	animation79.pattern3,overlay,140,0,125,0
+	animation79.pattern4,overlay,-1,50,125,0
+	animation79.pattern5,overlay,131,0,125,0
+	animation79.pattern6,overlay,-1,50,125,0
+	animation79.pattern7,start,40
+
+	//--eyebrows
+	//neutral
+	animation80.interval,runonce
+	animation80.pattern0,overlay,170,0,125,0
+
+	//angry
+	animation81.interval,never
+	animation81.pattern0,stop,80
+	animation81.pattern1,overlay,171,0,125,0
+
+	//sad
+	animation82.interval,never
+	animation82.pattern0,stop,80
+	animation82.pattern1,overlay,172,0,125,0
+
+	//--extras
+	//blush
+	animation90.interval,never 
+	animation90.pattern0,overlay,180,0,125,0
+	
+	//sweat
+	animation91.interval,never 
+	animation91.pattern0,overlay,181,0,125,0
+	
+	//trauma
+	animation92.interval,never 
+	animation92.pattern0,overlay,182,0,125,0
+
+		//------ PARTNER APPENDS
+		//yes this means i have to build every part manually in sakurascript
+
+	//---TAHIR
+	//--base
+	animation2000.interval,never
+	animation2000.pattern0,overlay,2000,0,-125,0
+
+	//--mouth
+	//smile
+	animation2110.interval,never
+	animation2110.pattern0,overlay,2110,0,-125,0
+	//open smile
+	animation2111.interval,never
+	animation2111.pattern0,overlay,2111,0,-125,0
+	//neut
+	animation2115.interval,never
+	animation2115.pattern0,overlay,2115,0,-125,0
+	//open neut
+	animation2116.interval,never
+	animation2116.pattern0,overlay,2116,0,-125,0
+	//sad
+	animation2120.interval,never
+	animation2120.pattern0,overlay,2120,0,-125,0
+	//open sad
+	animation2121.interval,never
+	animation2121.pattern0,overlay,2121,0,-125,0
+
+	//--eyes
+	//open
+	animation2130.interval,never
+	animation2130.pattern0,overlay,2130,0,-125,0
+	//lid
+	animation2131.interval,never
+	animation2131.pattern0,overlay,2131,0,-125,0
+	//look
+	animation2132.interval,never
+	animation2132.pattern0,overlay,2132,0,-125,0
+	//look lid
+	animation2133.interval,never
+	animation2133.pattern0,overlay,2133,0,-125,0
+	//look left
+	animation2134.interval,never
+	animation2134.pattern0,overlay,2134,0,-125,0
+	//look left lid
+	animation2135.interval,never
+	animation2135.pattern0,overlay,2135,0,-125,0
+	//dilate
+	animation2145.interval,never
+	animation2145.pattern0,overlay,2145,0,-125,0
+	//dilate lid
+	animation2146.interval,never
+	animation2146.pattern0,overlay,2146,0,-125,0
+
+	//--eyebrows
+	//neutral
+	animation2170.interval,never
+	animation2170.pattern0,overlay,2170,0,-125,0
+	//angry
+	animation2171.interval,never
+	animation2171.pattern0,overlay,2171,0,-125,0
+	//sad
+	animation2172.interval,never
+	animation2172.pattern0,overlay,2172,0,-125,0
+
+	//--extras
+	//blush
+	animation2180.interval,never
+	animation2180.pattern0,overlay,2180,0,-125,0
+	//trauma
+	animation2182.interval,never
+	animation2182.pattern0,overlay,2182,0,-125,0
+
+	//--arms
+	//down
+	animation2210.interval,never
+	animation2210.pattern0,overlay,2210,0,-125,0
+	//hip
+	animation2211.interval,never
+	animation2211.pattern0,overlay,2211,0,-125,0
+	//think
+	animation2212.interval,never
+	animation2212.pattern0,overlay,2212,0,-125,0
+	
+	//---AGASTACHE
+	//--base
+	animation2500.interval,never
+	animation2500.pattern0,overlay,2500,0,-125,0
+
+	//--mouth
+	//snile
+	animation2510.interval,never
+	animation2510.pattern0,overlay,2510,0,-125,0
+	//frown
+	animation2515.interval,never
+	animation2515.pattern0,overlay,2515,0,-125,0
+
+	//--eyes
+	//open
+	animation2530.interval,never
+	animation2530.pattern0,start,2570
+	animation2530.pattern1,overlay,2530,0,-125,0
+	//u_u
+	animation2540.interval,never
+	animation2540.pattern0,start,2570
+	animation2540.pattern1,overlay,2540,0,-125,0
+	//^_^
+	animation2541.interval,never
+	animation2541.pattern0,start,2570
+	animation2541.pattern1,overlay,2541,0,-125,0
+
+	//--eyebrows
+	//neut
+	animation2550.interval,never
+	animation2550.pattern0,overlay,2550,0,-125,0
+	//mad
+	animation2551.interval,never
+	animation2551.pattern0,overlay,2551,0,-125,0
+	//sad
+	animation2552.interval,never
+	animation2552.pattern0,overlay,2552,0,-125,0
+
+	//glasses
+	animation2570.interval,never
+	animation2570.pattern0,overlay,2570,0,-125,0
+}
+
+
+
+//0: idol celeste smile talk
+//1: idol celeste neutral talk
+//2: idol celeste sad talk
+//3: casual celeste smile talk
+//4: casual celeste neutral talk
+//5: casual celeste sad talk
+//6: party celeste smile talk
+//7: party celeste neutral talk
+//8: party celeste sad talk
+//	0-9: background elements
+//	10-19: base clothes
+//11: celeste turned around + turned around, shocked
+//12: celeste pointing splash
+//13: celeste battle (VS SUNSPRITE)
+//14: happy tahir nocoat talk, celeste casual right
+//15: happy tahir coat talk, celeste idol right
+//16: neutral tahir nocoat talk, celeste casual right
+//17: neutral tahir coat talk, celeste idol right
+//18: sad tahir nocoat talk, celeste casual right
+//19: sad tahir coat talk, celeste idol right
+//20: idol celeste right smile talk, other chara on left
+//21: idol celeste right neutral talk, other chara on left
+//22: idol celeste right sad talk, other chara on left
+//23: casual celeste right smile talk, other chara on left
+//24: casual celeste right neutral talk, other chara on left
+//25: casual celeste right sad talk, other chara on left
+
+//append all
+surface.append0-9,11-25
+{
+	//background elements: 
+	//ranges from 0-9
+	//NONE
+
+	//FRONT FRAME
+	animation9999.interval,runonce
+	animation9999.pattern0,overlay,3001,0,0,0
+
+	collisionex0,menu,regions,hitbox.png,255,0,0
 }

@@ -10,27 +10,42 @@ s.init
 	//to align the invisible screens to set up balloons
 	"\![reset,sticky-window]\![set,sticky-window,0,1,2]" //for some reason i cant set this up in descript.txt?
 	--
-	"\p[2]\s[-1]\![move,--X=0,--Y=0,--base=0,--base-offset=center.center,--option=ignore-sticky-window]"
+	if SHIORI3FW.BalloonName == "Closed Solar Captions"
+	{"\0\![set,balloonoffset,@-250,0]"
 	--
-	"\![set,balloonoffset,@-66,@-550]"
+	"\p[2]\s[-1]\![move,--X=0,--Y=0,--base=0,--option=ignore-sticky-window]"
 	--
-	"\1\s[-1]\![move,--X=0,--Y=0,--base=0,--base-offset=center.center,--option=ignore-sticky-window]"
+	"\![set,balloonoffset,-250,-530]"
 	--
-	"\![set,balloonoffset,@-66,@-370]"
+	"\1\s[-1]\![move,--X=0,--Y=0,--base=0,--option=ignore-sticky-window]"
 	--
-	"\0\s[0]"
+	"\![set,balloonoffset,-250,-340]"}
+	--
+	"\0\s[9]"
 
-	//i can make this cleaner post jam ig
+	//i can make this cleaner post jam i think.. i think there's a code snippet out there about this but i might be remembering wrong
 }
 
 s.base
 {
 	//sets the main monitor (does not set the surface of \1 or \p[2])
-	//depends on which part of the story you're at... kinda complicated...
-
-	//for now it just sets it back to \s[0]
-	"\0\s[0]"
+	//depends on which part of the story you're at... kinda complicated... later...
+	"\0\s[9]"
 }
+
+aga.base {"\i[2550]\i[2530]\i[2510]\i[2500]"}
+aga.neut {"\i[2550]\i[2530]\i[2515]\i[2500]"}
+aga.smile {"\i[2550]\i[2541]\i[2510]\i[2500]"}
+aga.solemnsmile {"\i[2552]\i[2530]\i[2510]\i[2500]"}
+aga.solemn {"\i[2552]\i[2530]\i[2515]\i[2500]"}
+aga.solemnclose {"\i[2552]\i[2540]\i[2515]\i[2500]"}
+aga.close {"\i[2550]\i[2540]\i[2515]\i[2500]"}
+aga.etoo {"\i[2552]\i[2541]\i[2510]\i[2500]"}
+aga.stern {"\i[2551]\i[2530]\i[2515]\i[2500]"}
+
+tam.base {""}
+tam.close {""}
+tam.smile {""}
 
 //------- MISC FUNCTIONS
 

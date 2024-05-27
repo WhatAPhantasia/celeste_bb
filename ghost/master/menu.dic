@@ -57,10 +57,11 @@ CurrentChapterLabel
 		"Can't you tell me what to do?"
 		"What's in a dream?"
 		"And then you took it from me."
-		"Peace is restored!"
+		"AN: End of the Demo"
+		//"Peace is restored!"
 		"Tell me what to do!"
 		"In the end, it's still you."
-		"None."
+		"Epilogue."
 	}
 }
 
@@ -90,38 +91,39 @@ OnChapterMenu : all
 	"\![*]1: \_a[OnChapterSelect,0]I'm Celeste!\_a\n"
 	"  ((One of Celeste's performances.))\n"
 	
-	if storestory[0] < 1 {"\![*]2: That's what peace means!\n"
+	if unlockstory < 1 {"\![*]2: That's what peace means!\n"
 	"  ((Not unlocked.))\n"}
 	else {"\![*]2: \_a[OnChapterSelect,1]That's what peace means!\_a\n"
 	"  ((An interview and battle broadcast.))\n"}
 	
-	if storestory[0] < 2 {"\![*]3: Can't you tell me what to do?\n"
+	if unlockstory < 2 {"\![*]3: Can't you tell me what to do?\n"
 	"  ((Not unlocked.))\n"}
 	else {"\![*]3: \_a[OnChapterSelect,2]Can't you tell me what to do?\_a\n"
 	"  ((A conversation in the Sun's Light.))\n"}
 	
-	if storestory[0] < 3 {"\![*]4: What's in a dream?\n"
+	if unlockstory < 3 {"\![*]4: What's in a dream?\n"
 	"  ((Not unlocked.))\n"}
 	else {"\![*]4: \_a[OnChapterSelect,3]What's in a dream?\_a\n"
 	"  ((A confession to a dear friend.))\n"}
 	
-	if storestory[0] < 4 {"\![*]5: And then you took it from me.\n"
+	if unlockstory < 4 {"\![*]5: And then you took it from me.\n"
 	"  ((Not unlocked.))\n"}
 	else {"\![*]5: \_a[OnChapterSelect,4]And then you took it from me.\_a\n"
-	"  ((The truth is hard to swallow.))\n"}
+	"  ((A briefing full of lies.))\n"}
 	
-	if storestory[0] < 5 {"\![*]6: Peace is restored!\n"
-	"  ((Not unlocked.))\n"}
+	if unlockstory < 5 {"\![*]6: Peace is restored!\n"
+	"  ((Not available.))\n"}
 	else {"\![*]6: \_a[OnChapterSelect,5]Peace is restored!\_a\n"
-	"  ((Celeste's great victory.))\n"}
+	"  ((Currently redirects to author's notes!))\n"}
+	//"  ((Celeste's great victory.))\n"}
 	
-	if storestory[0] < 6 {"\![*]7: Tell me what to do!\n"
-	"  ((Not unlocked.))\n"}
+	if unlockstory < 6 {"\![*]7: Tell me what to do!\n"
+	"  ((Not available.))\n"}
 	else {"\![*]7: \_a[OnChapterSelect,6]Tell me what to do!\_a\n"
-	"  ((After everything, something's still missing.))\n"}
+	"  ((Something's still missing.))\n"}
 	
-	if storestory[0] < 7 {"\![*]8: In the end, it's still you.\n"
-	"  ((Not unlocked.))\n"}
+	if unlockstory < 7 {"\![*]8: In the end, it's still you.\n"
+	"  ((Not available.))\n"}
 	else {"\![*]8: \_a[OnChapterSelect,7]In the end, it's still you.\_a\n"
 	"  ((Fenara's greatest messenger.))\n"}
 	

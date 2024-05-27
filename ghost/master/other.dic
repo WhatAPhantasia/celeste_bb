@@ -41,32 +41,32 @@ OnAnchorSelect
 		{
 			when "key"
 			{
-				//can't just do a simple increment. need to check currentstory and match it up with storestory, etc
-				//STORESTORY[0] STARTS AT 0, STORESTORY[1] STARTS AT 1
+				//can't just do a simple increment. need to check currentstory and match it up with unlockstory, etc
+				//UNLOCKSTORY STARTS AT 0
 				//set unlocked chapters.
 				_next = currentstory[0] + 1
-				_temp = storestory[0]
-				if storestory[0] < _next; storestory[0]++
+				_temp = unlockstory
+				if unlockstory < _next; unlockstory++
 
 				"\t\*\p[2]\b[100]"
 				--
 				switch currentstory[0]
 				{
-					"Peace... \w8They'd never make her say this nowadays."
+					"Peace... \w8They'd never make her say this nowadays." 
 					"It's hard being on a screen. \w8People see your every doubt."
-					"Chapter three."
-					"Chapter four"
-					"Chapter five."
-					"Chapter six."
-					"Chapter seven"
-					"Chapter eight."
+					"Faith. \w8Agastache was well meaning, \w4but he didn't understand her at all."
+					"You think she already knew she was being used. \w8It didn't do much in the end."
+					"That rune. \w8It would've killed so many people."
+					"We know that we're just as guilty as them. \w8That doesn't absolve us of anything."
+					"You've never heard her say that word before. \w8The realization makes you feel sick."
+					"And then everyone forgot."
 				}
 				--
 				"\w8\_q\n\n\![*] "
 				--
 				if _temp <= currentstory[0] && currentstory[0] < 7; "\q[You've found another recording.,blank]"
-				elseif _temp <= currentstory[0] && currentstory[0] == 7; "\q[That's all of them.,OnEpilogue]" //maybe add short epilogue? 
-				else; "\q[Back,blank]"
+				elseif _temp <= currentstory[0] && currentstory[0] == 7; "\q[That's all of it.,blank]" //maybe add short epilogue? (POSTJAM)
+				else; "\q[Close,blank]"
 			}
 		}
 	}
@@ -76,20 +76,23 @@ OnAnchorSelect
 OnKeyPress
 {
 	if reference0 == "f1"; "\![open,readme]"
-	elseif reference0 == "t"; OnAiTalk
-	elseif reference0 == "r"; OnLastTalk
+	//elseif reference0 == "t"; OnAiTalk
+	//elseif reference0 == "r"; OnLastTalk
+	//elseif reference0 == "e"; OnRewind
+
+	//no keypresses bc i dont want to copy paste anything from menu right now im so sleeepy
 }
 
 //Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
 OnSurfaceRestore
 {
-	"%(s.init)%(s.base)"
+	""
 }
 
 //Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
 OnWindowStateRestore
 {
-	"%(s.init)%(s.base)"
+	""
 }
 
 //Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
@@ -103,7 +106,7 @@ OnWindowStateRestore
 //Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
-	"https://raw.githubusercontent.com/WhatAPhantasia/celeste_bb/master/celeste_bb/"
+	"https://raw.githubusercontent.com/WhatAPhantasia/celeste_bb/master/"
 }
 
 
