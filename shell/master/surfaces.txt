@@ -717,7 +717,7 @@ surface.append20-22,17
 	//hand over mic
 	animation149.interval,never
 	animation149.pattern0,stop,144
-	animation149.pattern0,overlay,250,0,125,0
+	animation149.pattern1,overlay,250,0,125,0
 
 	//--both arms
 	//weapon 1
